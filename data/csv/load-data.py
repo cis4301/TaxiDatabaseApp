@@ -4,8 +4,7 @@ import urllib2
 from contextlib import closing
 import pandas as pd
 #
-# opens data from csvRecordCount.txt which contains the number of
-# records for every csv file since January 2016,
+# error check for arguments
 #
 if len(sys.argv) < 2:
     print 'Need to provide number of tuples for datasets '\
@@ -13,22 +12,20 @@ if len(sys.argv) < 2:
     sys.exit(1)  # abort because of error
 
 tuples = int(sys.argv[1])
-dividend = open('scripts/csvRecordCount.txt').readlines()
+dividend = open('scripts/csv_recordcount.txt').readlines()
 dividends = [line[:-1] for line in dividend]
 dividends = map(int, dividends)
 dividends = [x/tuples for x in dividends]
 #
-# sourceURLs and outputFiles is our master list of data sources and the
-# directory structure of our data
+# finds a dividend from the recordcount file to output correct number of tuples
 #
-URLs = open('scripts/sourceURLs.txt', 'r')
-file = open('scripts/outputFiles.txt', 'r').readlines()
+URLs = open('scripts/source-urls.txt', 'r')
+file = open('scripts/outputdir.txt', 'r').readlines()
 fileList = [line[:-1] for line in file]
 
 pageNumber = 0
 
-# opens csv file from URL and writes to a new csv file in our directory with number of
-# records specified.
+# opens the csv file from the URL and writes to a new csv file in our directory 
 
 for line in URLs:
     url = line
