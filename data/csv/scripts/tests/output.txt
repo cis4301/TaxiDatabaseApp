@@ -1,1 +1,3 @@
-../2016/yellow/yellow_tripdata_2016-01.csv
+../../2016/yellow/yellow_tripdata_2016-01.csv
+../../2016/yellow/yellow_tripdata_2016-02.csv
+../../2016/yellow/yellow_tripdata_2016-03.csv
