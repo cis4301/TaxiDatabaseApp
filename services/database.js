@@ -2,17 +2,15 @@ const oracledb = require('oracledb');
 const dbConfig = require('../config/database.js');
 
 
-async function initialize() {
-
+async function initialize()
+{
 //  const pool = await oracledb.createPool(dbConfig.CISEPool);
-
-await oracledb.createPool(dbConfig.CISEPool);
-
+  await oracledb.createPool(dbConfig.CISEPool);
   console.log("Oracle DB Connected~!!!");
-
 }
 
-async function close() {
+async function close()
+{
   await oracledb.getPool().close();
 }
 
