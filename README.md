@@ -22,7 +22,7 @@ Morgan for debugging
 
 To get up and running download node.JS 10.x or higher from nodejs.org.
 
-To run the app, go to root and type
+From the app's root directory, type:
 
     node install
    
