@@ -1,26 +1,10 @@
 const webServer = require('./services/web-server.js');
 const database = require('./services/database.js');
 const dbConfig = require('./config/database.js');
-const iphandle = require('ip');
-
-const vpn = require('cisco-vpn')({
-  server: process.env.VPN_SERVER,
-  username: process.env.VPN_username,
-  password: process.env.VPN_PASSWORD
-})
 
 async function startup() {
 
   console.log('Starting application');
-
-// Checks to make sure VPN isn't already Connected
-// Low value indicates an IP address that isn't local
-  if(iphandle.toLong(iphandle.address()) > 200000000 )
-  {
-    await vpn.connect()
-      .then(() => console.log('connected to UF VPN'))
-  }
-  console.log(iphandle.address());
 // Initialize the CISE database pool with credentials stored in ./bashrc
   try {
     console.log('Initializing database module');

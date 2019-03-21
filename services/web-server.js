@@ -22,9 +22,7 @@ function initialize() {
 
       res.end(`DB user: ${user}\nDate: ${date}`);
     });
-    app.use('/api/', router);
-
-
+    app.use('/database/', router);
 
     httpServer.listen(webServerConfig.port)
     .on('listening', () => {
