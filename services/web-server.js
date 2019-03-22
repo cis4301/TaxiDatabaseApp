@@ -15,15 +15,18 @@ function initialize() {
 
     app.use(morgan('combined'));
 
+    app.get('/', async (req, res) => {
+      const result = await database.simpleExecute('select user, systimestamp from dual');
+      const user = result.rows[0].USER;
+      const date = result.rows[0].SYSTIMESTAMP;
 
-    app.use('/api/', router);
-
-
+      res.end(`DB user: ${user}\nDate: ${date}`);
+    });
+    app.use('/database/', router);
 
     httpServer.listen(webServerConfig.port)
     .on('listening', () => {
       console.log('Web server listening on localhost:', webServerConfig.port);
-
       resolve();
     })
     .on('error', err => {

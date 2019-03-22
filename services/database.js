@@ -1,18 +1,29 @@
-const oracledb = require('oracledb');
 const dbConfig = require('../config/database.js');
+const oracledb = require('oracledb');
+const iphandle = require('ip');
+const vpn = require('cisco-vpn')({
+  server: process.env.VPN_SERVER,
+  username: process.env.VPN_username,
+  password: process.env.VPN_PASSWORD
+})
 
+async function initialize()
+{
 
-async function initialize() {
+  if(iphandle.toLong(iphandle.address()) > 200000000 )
+  {
+    await vpn.connect()
+      .then(() => console.log('connected to UF VPN'))
+  }
+  console.log(iphandle.address());
 
-//  const pool = await oracledb.createPool(dbConfig.CISEPool);
-
-await oracledb.createPool(dbConfig.CISEPool);
+  await oracledb.createPool(dbConfig.CISEPool);
 
   console.log("Oracle DB Connected~!!!");
-
 }
 
-async function close() {
+async function close()
+{
   await oracledb.getPool().close();
 }
 
@@ -42,6 +53,7 @@ function simpleExecute(statement, binds = [], opts = {}) {
     }
   });
 }
+
 module.exports.simpleExecute = simpleExecute;
 module.exports.close = close;
 module.exports.initialize = initialize;

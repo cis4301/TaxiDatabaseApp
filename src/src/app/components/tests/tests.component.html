@@ -1,0 +1,52 @@
+
+<h2 class="page-header">Back-end test</h2>
+<br>
+    <form>
+    <div class="form-group">
+        <label>Trip Number:</label>
+        <input type="text" [(ngModel)]="id" name="id" class="form-control">
+    </div>
+    </form>
+  <input type="submit" (click) = "onTestSubmit()" class="btn btn-primary" value="Locate">
+<br>
+<br>
+<form (submit)="onZoneSubmit()">
+  <div class="form-group">
+    <label>Zone Number:</label>
+    <input type="text" [(ngModel)]="zone" name="zone" class="form-control">
+  </div>
+</form>
+<input type="submit" (click) = "onZoneSubmit()" class="btn btn-primary" value="Locate">
+
+    <br>
+    <br>
+<h3> Data for Trip  {{id}} </h3>
+<div class="col-lg-4">
+<div class="bs-component">
+<ul>
+  <br>
+<pre> Trip Distance: {{ this.distance }} </pre>
+<pre> Total Amount:  {{ this.amount  }} </pre>
+<pre> Pickup Date: {{ this.pickup }} </pre>
+<pre> Dropoff Date:  {{ this.dropoff  }} </pre>
+</ul>
+    <br>
+  </div>
+</div>
+
+<h3> Data for Zone  {{zone}} </h3>
+<div class="col-lg-4">
+<div class="bs-component">
+  <ul>
+    <br>
+  <pre> Zone Number: {{ this.location }} </pre>
+  <pre> Name of Borough:  {{ this.borough  }} </pre>
+  <pre> Zone Name: {{ this.zonename }} </pre>
+  <pre> Service Type:  {{ this.servicezone  }} </pre>
+  </ul>
+  <br>
+  <br>
+    <pre> Data Obtained (JSON):{{ this.zonedata | json }} </pre>
+    <pre> Data Obtained (JSON):{{ this.tripdata | json }} </pre>
+  </div>
+</div>

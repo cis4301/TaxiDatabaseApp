@@ -22,12 +22,15 @@ Morgan for debugging
 
 To get up and running download node.JS 10.x or higher from nodejs.org.
 
-To run the app, go to root and type
+From the app's root directory, type:
 
-    node .
+    node install
+   
+to populate npm_modules folder, then
 
-packages may need to be installed with '-s' option to populate your
-npm_modules folder
+    grunt
+
+to run the app.
 
 ## Python
 
