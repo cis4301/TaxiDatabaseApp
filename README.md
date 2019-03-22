@@ -30,7 +30,17 @@ to populate npm_modules folder, then
 
     grunt
 
-to run the app.
+to start the database on localhost:3000.
+
+To run, the app
+
+    cd src/src
+
+then,
+
+    ng serve
+    
+to run the app on localhost:4200
 
 ## Python
 
