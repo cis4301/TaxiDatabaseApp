@@ -9,10 +9,15 @@ import { HomeComponent } from './components/home/home.component';
 import { ChartsComponent } from './components/charts/charts.component';
 import { GraphsComponent } from './components/graphs/graphs.component';
 
+import {ValidateService} from './services/validate.service';
+import {DataService} from './services/data.service';
+import { TestsComponent } from './components/tests/tests.component';
+
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
   {path:'charts', component: ChartsComponent},
-  {path:'graphs', component: GraphsComponent}
+  {path:'graphs', component: GraphsComponent},
+  {path:'tests', component: TestsComponent}
 ]
 @NgModule({
   declarations: [
@@ -20,7 +25,8 @@ const appRoutes: Routes = [
     NavbarComponent,
     HomeComponent,
     ChartsComponent,
-    GraphsComponent
+    GraphsComponent,
+    TestsComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +34,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [ValidateService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

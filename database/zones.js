@@ -9,9 +9,9 @@ async function find(context) {
   const binds = {};
 
   if (context.id) {
-    binds.tripID = context.id;
+    binds.locationID = context.id;
 
-    query += '\nwhere ZONEID = :zoneID';
+    query += '\nwhere LOCATIONID = :locationID';
   }
 
   const result = await database.simpleExecute(query, binds);
