@@ -1,5 +1,6 @@
 const http = require('http');
 const express = require('express');
+const cors = require('cors');
 const morgan = require('morgan');
 const webServerConfig = require('../config/web-server.js');
 const router = require('./router.js');
@@ -14,6 +15,8 @@ function initialize() {
     httpServer = http.createServer(app);
 
     app.use(morgan('combined'));
+
+    app.use(cors());
 
     app.get('/', async (req, res) => {
       const result = await database.simpleExecute('select user, systimestamp from dual');
