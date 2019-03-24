@@ -1,20 +1,11 @@
 const dbConfig = require('../config/database.js');
 const oracledb = require('oracledb');
 const iphandle = require('ip');
-const vpn = require('cisco-vpn')({
-  server: process.env.VPN_SERVER,
-  username: process.env.VPN_username,
-  password: process.env.VPN_PASSWORD
-})
+
 
 async function initialize()
 {
 
-  if(iphandle.toLong(iphandle.address()) > 200000000 )
-  {
-    await vpn.connect()
-      .then(() => console.log('connected to UF VPN'))
-  }
   console.log(iphandle.address());
 
   await oracledb.createPool(dbConfig.CISEPool);
