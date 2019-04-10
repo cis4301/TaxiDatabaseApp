@@ -45,20 +45,21 @@ export class MapresultComponent implements OnInit {
 
 
 
+        if (data) {
+
 
         mappy.setStyle( function(feature) {
               var id = feature.getProperty('OBJECTID');
 
               var color = '#F6CF65';
-              var idarray = data[1];
 
-              for (var i  in idarray) {
-                if (id === idarray[i]) {
-                  color = data[0][i];
-                  console.log(color);
-                 console.log(id);
-                }
+                var idarray = data[1];
+
+
+              if (idarray.includes(id)) {
+                color = data[0][idarray.indexOf(id)];
               }
+
             return /** @type {!google.maps.Data.StyleOptions} */({
               fillColor: color,
               fillOpacity: 0,
@@ -67,6 +68,8 @@ export class MapresultComponent implements OnInit {
               strokeWeight: 1
           });
         });
+
+      }
 
   }
 
@@ -90,7 +93,7 @@ export class MapresultComponent implements OnInit {
 
 
 
-    }, i*200);
+    }, i*50);
 }
 
 }
