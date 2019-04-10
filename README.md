@@ -24,13 +24,23 @@ To get up and running download node.JS 10.x or higher from nodejs.org.
 
 From the app's root directory, type:
 
-    node install
+    npm install
    
-to populate npm_modules folder, then
+to install all your dependencies, then
 
     grunt
 
-to run the app.
+to start the server on localhost:3000.
+
+To run the app, navigate to 
+
+    $~/TaxiDatabaseApp/angular/
+    
+then,
+
+    ng serve
+
+to run app on localhost:4200.
 
 ## Python
 
