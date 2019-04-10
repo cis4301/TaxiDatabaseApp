@@ -1,0 +1,67 @@
+<h2 class="page-header">Back-end test</h2>
+<br>
+    <form>
+    <div class="form-group">
+        <label>Trip Number:</label>
+        <input type="text" [(ngModel)]="id" name="id" class="form-control">
+    </div>
+    </form>
+  <input type="submit" (click) = "onTestSubmit()" class="btn btn-primary" value="Locate">
+<br>
+<br>
+<form (submit)="onZoneSubmit()">
+  <div class="form-group">
+    <label>Zone Number:</label>
+    <input type="text" [(ngModel)]="zone" name="zone" class="form-control">
+  </div>
+</form>
+<input type="submit" (click) = "onZoneSubmit()" class="btn btn-primary" value="Locate">
+
+    <br>
+    <br>
+<h3> Data for Trip  {{id}} </h3>
+<div class="col-lg-4">
+<div class="bs-component">
+<ul>
+  <br>
+<pre> Trip Distance: {{ this.distance }} </pre>
+<pre> Total Amount:  {{ this.amount  }} </pre>
+<pre> Passenger Count: {{ this.passengers }} </pre>
+<pre> Pickup Zone: {{ this.pickupzone }} </pre>
+<pre> Dropoff Zone: {{ this.dropoffzone }} </pre>
+
+
+</ul>
+    <br>
+  </div>
+</div>
+
+<h4> Data for pickup zone </h4>
+<div class="col-lg-4">
+<div class="bs-component">
+  <ul>
+    <br>
+  <pre> Zone Number: {{ this.location1 }} </pre>
+  <pre> Name of Borough:  {{ this.borough1  }} </pre>
+  <pre> Zone Name: {{ this.zonename1 }} </pre>
+  <pre> Yellow Exclusive:  {{ this.yellowexclusive1  }} </pre>
+  </ul>
+
+  </div>
+</div>
+<h4> Data for dropoff zone </h4>
+<div class="col-lg-4">
+<div class="bs-component">
+  <ul>
+    <br>
+  <pre> Zone Number: {{ this.location2 }} </pre>
+  <pre> Name of Borough:  {{ this.borough2  }} </pre>
+  <pre> Zone Name: {{ this.zonename2 }} </pre>
+  <pre> Yellow Exclusive:  {{ this.yellowexclusive2  }} </pre>
+  </ul>
+  <br>
+  <br>
+    <pre> Data Obtained (JSON):{{ this.zonedata1 | json }} </pre>
+    <pre> Data Obtained (JSON):{{ this.tripdata2 | json }} </pre>
+  </div>
+</div>

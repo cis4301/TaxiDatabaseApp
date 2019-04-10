@@ -20,12 +20,12 @@ dividends = [x/tuples for x in dividends]
 # finds a dividend from the recordcount file to output correct number of tuples
 #
 URLs = open('scripts/source-urls.txt', 'r')
-file = open('scripts/outputdir.txt', 'r').readlines()
+file = open('scripts/outputdirtest.txt', 'r').readlines()
 fileList = [line[:-1] for line in file]
 
 pageNumber = 0
 
-# opens the csv file from the URL and writes to a new csv file in our directory 
+# opens the csv file from the URL and writes to a new csv file in our directory
 
 for line in URLs:
     url = line

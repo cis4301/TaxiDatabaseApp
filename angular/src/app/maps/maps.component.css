@@ -1,0 +1,16 @@
+.container {padding-top: 50px;}
+
+
+.menu-container {
+  color: #000;
+    /* Blue */
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  border: 1px solid #fff;  /* For debugging */
+  width: 900px;
+  justify-content: space-between;
+}
