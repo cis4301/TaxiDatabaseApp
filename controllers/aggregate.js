@@ -5,6 +5,7 @@ async function get(req, res, next) {
     const context = {};
 
     context.zone1 = parseInt(req.query.zone1, 10);
+    context.type = parseInt(req.query.type, 10);
 
     const rows = await aggregate.find(context);
 
