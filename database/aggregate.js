@@ -5,15 +5,17 @@ const baseQuery =
 
 
 async function find(context) {
-    let query = baseQuery;
-  if (context.type === 1) {
+  let query = baseQuery;
+
+
+  if (context.trip === 1) {
     query += ', QUERY2 AS(SELECT * FROM QUERY1 NATURAL JOIN CHASTAIN.GREENTRIP)';
     console.log(query);
   }
-  else if (context.type === 2) {
+  else if (context.trip === 2) {
     query += ', QUERY2 AS(SELECT * FROM QUERY1 NATURAL JOIN CHASTAIN.YELLOWTRIP)';
     console.log(query);
-  } else if (context.type === 3){
+  } else if (context.trip === 3){
     query += ', QUERY2 AS(SELECT * FROM QUERY1 WHERE tripID NOT IN(SELECT TRIPID FROM CHASTAIN.YELLOWTRIP UNION SELECT TRIPID FROM CHASTAIN.GREENTRIP))'
     console.log(query);
   } else {

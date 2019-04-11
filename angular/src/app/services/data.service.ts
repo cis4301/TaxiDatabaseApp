@@ -11,6 +11,8 @@ export class DataService {
   dataToken: any;
   trip: any;
   zone: any;
+  triptype: any;
+  zonearray: any;
 
   constructor(private http:HttpClient) { }
 
@@ -30,6 +32,14 @@ export class DataService {
   getTripTimes(zone) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:3000/database/aggregate/?zone1=' + zone, {headers: headers})
+    return this.http.get('http://localhost:3000/database/aggregate/?zone1=' + zone + '&trip=4', {headers: headers})
+  }
+
+  getTripTimesCategory(zonearray) {
+    var zonenumber = zonearray[0];
+    var trip = zonearray[1];
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3000/database/aggregate/?zone1=' + zonenumber + '&trip=' + trip, {headers: headers})
   }
 }

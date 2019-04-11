@@ -102,9 +102,7 @@ export class MapsComponent implements OnInit {
         infowindow.setPosition(event.latLng);
         infowindow.open(this.map);
       });
-      var infobox = this.map.data.addListener('mouseout', function(event) {
-        infowindow.close();
-      });
+
   }
 
   setMapType(mapTypeId: string) {
@@ -228,10 +226,10 @@ async setObjectID()  {
 
     const delay = ms => new Promise(res => setTimeout(res, ms));
     this.startZone = +document.getElementById('info-box').textContent;
+    this.messageService.setZone([this.startZone, 0]);
     var count = 0;
     var data;
     var maxvalue = 0;
-
 
       this.dataService.getTripTimes(this.startZone).subscribe((res:Response) => {
        this.aggregateData = res;
@@ -243,8 +241,6 @@ async setObjectID()  {
          }
        }
      });
-
-
 
      while(!data) {
        await delay(1000);

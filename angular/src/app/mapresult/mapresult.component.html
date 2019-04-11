@@ -4,10 +4,11 @@
 
         <div class = "menu-container">
             <div class = "menu">
-              <button (click)="setMapType('terrain')" class="btn btn-warning"> Yellow Zones </button>
-              <button (click)="setMapType('satellite')" class="btn btn-success">Green Zones</button>
-              <button (click)="setMapType('roadmap')" class="btn btn-info">FHV Trips</button>
-            
+              <button (click)="setCategory(1)" class="btn btn-warning"> Yellow Zones </button>
+              <button (click)="setCategory(2)" class="btn btn-success">Green Zones</button>
+              <button (click)="setCategory(3)" class="btn btn-info">FHV Trips</button>
+              <button (click)="setCategory(4)" class="btn btn-info">All Trips</button>
+
             </div>
 
             <div class = "menu" style = "float: right">

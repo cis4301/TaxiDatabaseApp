@@ -22,6 +22,8 @@ export class MapresultComponent implements OnInit {
   resetflag: false;
   startZone: any;
   isHidden = false;
+  introdisplay: false;
+  aggregateData: any;
 
   constructor(
     private validateService: ValidateService,
@@ -33,7 +35,6 @@ export class MapresultComponent implements OnInit {
   ngOnInit() {
         this.mapdata = this.messageService.getData();
 
-        console.log(this.mapdata);
         this.map = new google.maps.Map(document.getElementById('map'), {
           zoom: 11,
           center: {lat: 40.710850, lng: -73.897766}
@@ -43,23 +44,14 @@ export class MapresultComponent implements OnInit {
         var mappy = this.map.data;
         var data = this.mapdata;
 
-
-
-        if (data) {
-
-
         mappy.setStyle( function(feature) {
               var id = feature.getProperty('OBJECTID');
-
               var color = '#F6CF65';
-
-                var idarray = data[1];
-
+              var idarray = data[1];
 
               if (idarray.includes(id)) {
                 color = data[0][idarray.indexOf(id)];
               }
-
             return /** @type {!google.maps.Data.StyleOptions} */({
               fillColor: color,
               fillOpacity: 0,
@@ -68,17 +60,15 @@ export class MapresultComponent implements OnInit {
               strokeWeight: 1
           });
         });
-
-      }
-
   }
-
   ngAfterContentInit() {
 
     var data = this.mapdata;
     var globalopacity = 0;
     var mappy = this.map.data;
-
+    var content;
+    var infowindow = new google.maps.InfoWindow();
+    var messagePassing = this.messageService;
 
     for(let i = 0; i < 100; i++) {
     setTimeout ( function timer() {
@@ -96,15 +86,85 @@ export class MapresultComponent implements OnInit {
     }, i*50);
 }
 
+
+    var infobox = this.map.data.addListener('click', function(event) {
+      content = messagePassing.getZoneArray(event.feature.getProperty('OBJECTID')-1);
+      console.log(content);
+      infowindow.setContent(
+        '<div id="content">'+
+              '<h3>'+ content[1] + '</h3>' +
+              '<div id="bodyContent">'+
+              '<pre> &#10;&#13; Borough:' + content[0] + '&#10;&#13; Neighborhood:' + content[2] + ' &#10;&#13; Type:' + content[3] + '</pre>' +
+
+              '</div>'+
+              '</div>'
+        );
+      infowindow.setPosition(event.latLng);
+      infowindow.open(this.map);
+    });
+
 }
 
+async setCategory(number)  {
+
+      const delay = ms => new Promise(res => setTimeout(res, ms));
+
+      var count = 0;
+      var data;
+      var maxvalue = 0;
+      var zonearray = [];
+      var parcel = this.messageService;
+      zonearray = parcel.getZone();
+
+      zonearray[1] = number;
+      console.log(zonearray);
+      this.dataService.getTripTimesCategory(zonearray).subscribe((res:Response) => {
+      this.aggregateData = res;
+      data = this.aggregateData;
+      console.log(data);
+         for (var i in data) {
+           if (maxvalue < data[i].TRIPTIME) {
+             maxvalue = data[i].TRIPTIME;
+
+           }
+         }
+       });
+       console.log(maxvalue);
+       while(!data) {
+         await delay(1000);
+         console.log("waited 1 second");
+       }
+
+        var mappers = this.map;
+        var x = 0;
+        var tripcolors = [];
+        var objectid = [];
+        mappers.data.setStyle({
+          fillColor: '#F6CF65',
+          fillOpacity: .5,
+          strokeColor: 'black',
+          strokeOpacity: 0,
+          strokeWeight: 1
+
+        });
 
 
+         mappers.data.forEach(function(feature) {
+
+           var id = feature.getProperty('OBJECTID');
 
 
-  setMapType(mapTypeId: string) {
-    this.map.setMapTypeId(mapTypeId)
-  }
+           for (var i  in data) {
+             if (id === data[i].ENDZONE) {
+               x = data[i].TRIPTIME/maxvalue * 100;
+               x = Math.round(x);
+               mappers.data.overrideStyle(feature, {fillColor: parcel.getColor(x-1), fillOpacity: 1, strokeWeight: 1});
+             }
+             count++;
+           }
+           });
+         }
+
 
   Back() {
     this.router.navigateByUrl('/maps');
