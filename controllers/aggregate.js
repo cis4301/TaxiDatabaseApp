@@ -3,8 +3,9 @@ const aggregate = require('../database/aggregate.js');
 async function get(req, res, next) {
   try {
     const context = {};
-
+      console.log(req.query);
     context.zone1 = parseInt(req.query.zone1, 10);
+    context.trip = parseInt(req.query.trip, 10);
 
     const rows = await aggregate.find(context);
 

@@ -57,9 +57,12 @@ export class MapsComponent implements OnInit {
 
         console.log("Hello World");
 
+
   }
 
   ngAfterContentInit() {
+
+
 
     this.map.data.setStyle( function(feature) {
 
@@ -81,6 +84,24 @@ export class MapsComponent implements OnInit {
         });
       });
 
+      var content;
+      var infowindow = new google.maps.InfoWindow();
+      var messagePassing = this.messageService;
+      var infobox = this.map.data.addListener('click', function(event) {
+        content = messagePassing.getZoneArray(event.feature.getProperty('OBJECTID')-1);
+        console.log(content);
+        infowindow.setContent(
+          '<div id="content">'+
+                '<h3>'+ content[1] + '</h3>' +
+                '<div id="bodyContent">'+
+                '<pre> &#10;&#13; Borough:' + content[0] + '&#10;&#13; Neighborhood:' + content[2] + ' &#10;&#13; Type:' + content[3] + '</pre>' +
+
+                '</div>'+
+                '</div>'
+          );
+        infowindow.setPosition(event.latLng);
+        infowindow.open(this.map);
+      });
 
   }
 
@@ -205,10 +226,10 @@ async setObjectID()  {
 
     const delay = ms => new Promise(res => setTimeout(res, ms));
     this.startZone = +document.getElementById('info-box').textContent;
+    this.messageService.setZone([this.startZone, 0]);
     var count = 0;
     var data;
     var maxvalue = 0;
-
 
       this.dataService.getTripTimes(this.startZone).subscribe((res:Response) => {
        this.aggregateData = res;
@@ -220,8 +241,6 @@ async setObjectID()  {
          }
        }
      });
-
-
 
      while(!data) {
        await delay(1000);
