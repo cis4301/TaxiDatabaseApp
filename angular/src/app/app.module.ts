@@ -16,6 +16,7 @@ import { MapresultComponent } from './mapresult/mapresult.component';
 import { ValidateService } from './services/validate.service';
 import { DataService } from './services/data.service';
 import { MessageService } from './services/message.service';
+import { NetflowComponent } from './netflow/netflow.component';
 
 const appRoutes: Routes = [
   {path:'maps', component: MapsComponent},
@@ -35,7 +36,8 @@ const appRoutes: Routes = [
     RegisterComponent,
     HomeComponent,
     TestComponent,
-    MapresultComponent
+    MapresultComponent,
+    NetflowComponent
   ],
   imports: [
     BrowserModule,
