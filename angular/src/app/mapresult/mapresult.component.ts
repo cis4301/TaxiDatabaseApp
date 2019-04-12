@@ -43,23 +43,25 @@ export class MapresultComponent implements OnInit {
 
         var mappy = this.map.data;
         var data = this.mapdata;
+        if(data) {
+          mappy.setStyle( function(feature) {
+                var id = feature.getProperty('OBJECTID');
+                var color = '#FF0000';
+                var idarray = data[1];
 
-        mappy.setStyle( function(feature) {
-              var id = feature.getProperty('OBJECTID');
-              var color = '#F6CF65';
-              var idarray = data[1];
-
-              if (idarray.includes(id)) {
-                color = data[0][idarray.indexOf(id)];
-              }
-            return /** @type {!google.maps.Data.StyleOptions} */({
-              fillColor: color,
-              fillOpacity: 0,
-              strokeColor: 'black',
-              strokeOpacity: 0,
-              strokeWeight: 1
+                if (idarray.includes(id)) {
+                  color = data[0][idarray.indexOf(id)];
+                }
+              return /** @type {!google.maps.Data.StyleOptions} */({
+                fillColor: color,
+                fillOpacity: 0,
+                strokeColor: 'black',
+                strokeOpacity: 0,
+                strokeWeight: 1
+            });
           });
-        });
+        }
+
   }
   ngAfterContentInit() {
 

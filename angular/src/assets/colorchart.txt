@@ -1,70 +1,101 @@
-var colorCodes = [#fcefad, #f9edab, #f7eaa9, #f4e8a8, #f2e5a6, #efe3a4, #ede1a2, #eadea1, #e8dc9f, #e5d99d, #e2d79b, #e0d49a, #ddd298, #dbd096, #d8cd94, #d6cb93, #d3c891, #d1c68f, #cec48d, #cbc18c, #c9bf8a, #c6bc88, #c4ba86, #c1b784, #bfb583, #bcb381, #bab07f, #b7ae7e, #b5ab7c, #b2a97a, #afa678, #ada476, #aaa275, #a89f73, #a59d71, #a39a6f, #a0986e, #9e966c, #9b936a, #989168, #968e67, #938c65, #918963, #8e8761, #8c8560, #89825e, #87805c, #847d5a, #827b59, #7f7857, #7c7655, #7a7453, #777152, #756f50, #726c4e, #706a4c, #6d684b, #6b6549, #686347, #656045, #635e44, #605b42, #5e5940, #5b573e, #59543d, #56523b, #544f39, #514d37, #4f4b36, #4c4834, #494632, #474330, #44412f, #423e2d, #3f3c2b, #3d3a29, #3a3728, #383526, #353224, #323022, #302d21, #2d2b1f, #2b291d, #28261b, #26241a, #232118, #211f16, #1e1d14, #1c1a13, #191811, #16150f, #14130d, #11100c, #0f0e0a, #0c0c08, #0a0906, #070705, #050403, #020201, #000000];
 
-hexagonal (c: string): string {
-   var s = "0123456789abcdef";
-   var i = parseInt (c);
-   if (i == 0 || isNaN (c))
-     return "00";
-   i = Math.round (Math.min (Math.max (0, i), 255));
-   return s.charAt ((i - i % 16) / 16) + s.charAt (i % 16);
-}
-
-/* Convert an RGB triplet to a hex string */
-convertToHex (rgb: string): string {
-   return hexagonal(rgb[0]) + hexagonal(rgb[1]) + hexagonal(rgb[2]);
-}
-
-/* Remove '#' in color hex string */
-trimmy (s: string): string {
-   return (s.charAt(0) == '#') ? s.substring(1, 7) : s
- }
-
-/* Convert a hex string to an RGB triplet */
-
-generateColors(): array {
-
-    var start = [];
-    var end = [];
-    var s = '#e50dd8';
-    var p = '#020102';
-    var trims = (s.charAt(0) == '#') ? s.substring(1, 7) : s
-    var trimp = (p.charAt(0) == '#') ? p.substring(1, 7) : p
-    start[0] = parseInt (trims.substring (0, 2), 16);
-    start[1] = parseInt (trims.substring (2, 4), 16);
-    start[2] = parseInt (trims.substring (4, 6), 16);
-
-
-    end[0] = parseInt (trimp.substring (0, 2), 16);
-    end[1] = parseInt (trimp.substring (2, 4), 16);
-    end[2] = parseInt (trimp.substring (4, 6), 16);
-
-
-    var len = 100;
-    var alpha = 0.0;
-    var saida = [];
-    var i;
-
-    for (i = 0; i < 100; i++) {
-      var c = [];
-      alpha += (1.0/100);
-
-      c[0] = start[0] * alpha + (1 - alpha) * end[0];
-      c[1] = start[1] * alpha + (1 - alpha) * end[1];
-		  c[2] = start[2] * alpha + (1 - alpha) * end[2];
-
-		saida.push(convertToHex (c));
-    }
-
-
-    return saida;
-
- }
-
-findColor(triptime: number, maxvalue: number, saida: array): string {
-
-   var x = 0;
-   x = triptime/maxvalue * 100;
-   x = Math.round(x);
-   return saida[x-1];
-
- }
+['#fc0002',
+'#f90005',
+'#f70007',
+'#f4000a',
+'#f2000c',
+'#ef000f',
+'#ed0011',
+'#ea0014',
+'#e80016',
+'#e50019',
+'#e2001c',
+'#e0001e',
+'#dd0021',
+'#db0023',
+'#d80026',
+'#d60028',
+'#d3002b',
+'#d1002d',
+'#ce0030',
+'#cb0033',
+'#c90035',
+'#c60038',
+'#c4003a',
+'#c1003d',
+'#bf003f',
+'#bc0042',
+'#ba0044',
+'#b70047',
+'#b50049',
+'#b2004c',
+'#af004f',
+'#ad0051',
+'#aa0054',
+'#a80056',
+'#a50059',
+'#a3005b',
+'#a0005e',
+'#9e0060',
+'#9b0063',
+'#980066',
+'#960068',
+'#93006b',
+'#91006d',
+'#8e0070',
+'#8c0072',
+'#890075',
+'#870077',
+'#84007a',
+'#82007c',
+'#7f007f',
+'#7c0082',
+'#7a0084',
+'#770087',
+'#750089',
+'#72008c',
+'#70008e',
+'#6d0091',
+'#6b0093',
+'#680096',
+'#650099',
+'#63009b',
+'#60009e',
+'#5e00a0',
+'#5b00a3',
+'#5900a5',
+'#5600a8',
+'#5400aa',
+'#5100ad',
+'#4f00af',
+'#4c00b2',
+'#4900b5',
+'#4700b7',
+'#4400ba',
+'#4200bc',
+'#3f00bf',
+'#3d00c1',
+'#3a00c4',
+'#3800c6',
+'#3500c9',
+'#3200cc',
+'#3000ce',
+'#2d00d1',
+'#2b00d3',
+'#2800d6',
+'#2600d8',
+'#2300db',
+'#2100dd',
+'#1e00e0',
+'#1c00e2',
+'#1900e5',
+'#1600e8',
+'#1400ea',
+'#1100ed',
+'#0f00ef',
+'#0c00f2',
+'#0a00f4',
+'#0700f7',
+'#0500f9',
+'#0200fc',
+'#0000ff']

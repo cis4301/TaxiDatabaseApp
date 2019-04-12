@@ -66,7 +66,7 @@ export class MapsComponent implements OnInit {
 
     this.map.data.setStyle( function(feature) {
 
-          var color = '#F6CF65';
+          var color = '#0000ff';
          if (feature.getProperty('startZoneselected')) {
 
             color = feature.getProperty('color');
@@ -78,7 +78,7 @@ export class MapsComponent implements OnInit {
           }
           return /** @type {!google.maps.Data.StyleOptions} */({
             fillColor: color,
-            fillOpacity: .5,
+            fillOpacity: .4,
             strokeColor: 'black',
             strokeWeight: 1
         });
@@ -254,8 +254,8 @@ async setObjectID()  {
       var objectid = [];
 
 
-
-      this.messageService.setData(mappers);
+      var parcel = this.messageService;
+      parcel.setData(mappers);
        mappers.data.forEach(function(feature) {
          console.log("execute part 3");
          var id = feature.getProperty('OBJECTID');
@@ -266,7 +266,7 @@ async setObjectID()  {
              x = Math.round(x);
             // mappers.data.overrideStyle(feature, {fillColor: colorCodes[x-1], fillOpacity: (x>50) ? x/100 : .5});
              objectid.push(id);
-             tripcolors.push(colorCodes[x-1]);
+             tripcolors.push(parcel.getColor(100-x));
             // console.log(data[i].ENDZONE);
              //console.log(data[i].TRIPTIME);
             // console.log(mappers.data.getStyle());
@@ -274,8 +274,8 @@ async setObjectID()  {
            count++;
          }
          });
-         this.messageService.setData([tripcolors, objectid]);
-         console.log(this.messageService.getData());
+         parcel.setData([tripcolors, objectid]);
+         console.log(parcel.getData());
        }
 
 ResetSelection() {
