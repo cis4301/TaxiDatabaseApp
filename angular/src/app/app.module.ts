@@ -17,6 +17,7 @@ import { NetflowComponent } from './netflow/netflow.component';
 import { ValidateService } from './services/validate.service';
 import { DataService } from './services/data.service';
 import { MessageService } from './services/message.service';
+import { CostComponent } from './cost/cost.component';
 
 
 const appRoutes: Routes = [
@@ -39,7 +40,8 @@ const appRoutes: Routes = [
     HomeComponent,
     TestComponent,
     MapresultComponent,
-    NetflowComponent
+    NetflowComponent,
+    CostComponent
   ],
   imports: [
     BrowserModule,

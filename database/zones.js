@@ -13,7 +13,7 @@ async function find(context) {
 
     query += '\nwhere ZONEID = :locationID';
   }
-
+console.log(query);
   const result = await database.simpleExecute(query, binds);
 
   return result.rows;
