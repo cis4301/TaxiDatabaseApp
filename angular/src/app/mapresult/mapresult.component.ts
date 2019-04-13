@@ -46,7 +46,7 @@ export class MapresultComponent implements OnInit {
         if(data) {
           mappy.setStyle( function(feature) {
                 var id = feature.getProperty('OBJECTID');
-                var color = '#FF0000';
+                var color = '#C3ECB2';
                 var idarray = data[1];
 
                 if (idarray.includes(id)) {

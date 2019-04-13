@@ -35,6 +35,12 @@ export class DataService {
     return this.http.get('http://localhost:3000/database/aggregate/?zone1=' + zone + '&trip=4', {headers: headers})
   }
 
+  getNetFlow(hour) {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3000/database/netflow/?hour=' + hour, {headers: headers})
+  }
+
   getTripTimesCategory(zonearray) {
     var zonenumber = zonearray[0];
     var trip = zonearray[1];

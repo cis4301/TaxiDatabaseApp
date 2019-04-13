@@ -12,11 +12,12 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { TestComponent } from './test/test.component';
 import { MapresultComponent } from './mapresult/mapresult.component';
+import { NetflowComponent } from './netflow/netflow.component';
 
 import { ValidateService } from './services/validate.service';
 import { DataService } from './services/data.service';
 import { MessageService } from './services/message.service';
-import { NetflowComponent } from './netflow/netflow.component';
+
 
 const appRoutes: Routes = [
   {path:'maps', component: MapsComponent},
@@ -24,7 +25,8 @@ const appRoutes: Routes = [
   {path:'register', component: RegisterComponent},
   {path:'', component: HomeComponent},
   {path:'test', component: TestComponent},
-  {path:'mapresults', component: MapresultComponent}
+  {path:'mapresults', component: MapresultComponent},
+  {path:'netflow', component: NetflowComponent}
 ]
 
 @NgModule({

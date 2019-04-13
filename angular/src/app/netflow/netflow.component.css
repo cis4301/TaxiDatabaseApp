@@ -1,0 +1,44 @@
+@keyframes example {
+  from {width: 0%;
+  }
+  to {width: 100%;
+  }
+
+}
+.container {padding-top: 50px;}
+
+
+
+
+.menu-container {
+  color: #000;
+    /* Blue */
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu {
+  border: 1px solid #fff;  /* For debugging */
+  width: 900px;
+  justify-content: space-between;
+}
+
+#html {
+  height: 100vh;
+}
+#map {
+  height: 100vh;
+  width: 100vh;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.container {
+position:relative;
+height: 100vh;
+width: 100vh;
+}

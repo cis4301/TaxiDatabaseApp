@@ -66,7 +66,7 @@ export class MapsComponent implements OnInit {
 
     this.map.data.setStyle( function(feature) {
 
-          var color = '#0000ff';
+          var color = '#fff2af';
          if (feature.getProperty('startZoneselected')) {
 
             color = feature.getProperty('color');
