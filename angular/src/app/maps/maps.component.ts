@@ -51,7 +51,8 @@ export class MapsComponent implements OnInit {
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
-
+    this.map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push
+    (document.getElementById('legend'));
     this.map.data.loadGeoJson('../../assets/convert.json');
 
 

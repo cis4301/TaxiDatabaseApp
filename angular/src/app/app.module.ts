@@ -13,11 +13,12 @@ import { HomeComponent } from './home/home.component';
 import { TestComponent } from './test/test.component';
 import { MapresultComponent } from './mapresult/mapresult.component';
 import { NetflowComponent } from './netflow/netflow.component';
+import { CostComponent } from './cost/cost.component';
 
 import { ValidateService } from './services/validate.service';
 import { DataService } from './services/data.service';
 import { MessageService } from './services/message.service';
-import { CostComponent } from './cost/cost.component';
+
 
 
 const appRoutes: Routes = [
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
   {path:'', component: HomeComponent},
   {path:'test', component: TestComponent},
   {path:'mapresults', component: MapresultComponent},
-  {path:'netflow', component: NetflowComponent}
+  {path:'netflow', component: NetflowComponent},
+  {path: 'cost', component: CostComponent}
 ]
 
 @NgModule({

@@ -36,8 +36,8 @@ export class NetflowComponent implements OnInit {
       center: {lat: 40.710850, lng: -73.897766}
     });
     this.map.data.loadGeoJson('../../assets/convert.json');
-
-    this.map.data.loadGeoJson('../../assets/convert.json');
+    this.map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push
+    (document.getElementById('legend'));
     this.map.data.setStyle({fillColor: '#FFF2AF', strokeWeight: 1});
 
   }
@@ -133,12 +133,8 @@ export class NetflowComponent implements OnInit {
           var tripcolors = [];
           var objectid = [];
           mappers.data.setStyle({
-            fillColor: '#F6CF65',
-            fillOpacity: .5,
-            strokeColor: 'black',
-            strokeOpacity: 0,
+            fillColor: '#FFF2AF',
             strokeWeight: 1
-
           });
 
 

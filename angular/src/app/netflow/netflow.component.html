@@ -4,7 +4,7 @@
 
         <div class = "menu-container">
             <div class = "menu">
-              Choose a time of day: 
+              Choose a time of day:
               <select class='select-option' required [(ngModel)]='optionSelected' (ngModelChange)='onOptionsSelected($event)'>
                 <option class='option' *ngFor='let option of options' [value]="option">{{option}}</option>
               </select>
@@ -29,6 +29,16 @@
       <div class="col-md-1">
         <a href="https://github.com/ultrasonicsoft" target="_blank">GitHub</a>
       </div>
+    </div>
+    <div id="legend">
+    Net Flow:
+    <br>
+    <br>
+    <div id=squares>
+          <div id=square2>Inflow</div>
+          <br>
+          <div id=square>Outflow</div>
+    </div>
     </div>
   </footer>
 </div>

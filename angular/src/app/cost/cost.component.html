@@ -1,3 +1,46 @@
-<p>
-  cost works!
-</p>
+<div class="container">
+
+    <script data-require="d3@3.5.3" data-semver="3.5.3" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.js"></script>
+
+        <div id = "map" style="width:100vh;height:80vh" ></div>
+
+        <div class = "menu-container">
+            <div class = "menu">
+              Choose a time of day:
+              <select class='select-option' required [(ngModel)]='optionSelected' (ngModelChange)='onOptionsSelected($event)'>
+                <option class='option' *ngFor='let option of options' [value]="option">{{option}}</option>
+              </select>
+
+            </div>
+
+            <div class = "menu" style = "float: right">
+              <button (click)="setColor()" class="btn btn-primary" style = "float: right"> Color My Map! </button>
+            </div>
+        </div>
+  <br>
+  <footer>
+    <div class="row">
+      <div>
+        <span class="label label-primary">Author:  </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-1">
+        <a href="https://www.linkedin.com/in/balram-chavan-957511116/" target="_blank">LinkedIn</a>
+      </div>
+      <div class="col-md-1">
+        <a href="https://github.com/ultrasonicsoft" target="_blank">GitHub</a>
+      </div>
+    </div>
+    <div id="legend">
+    Average Cost (in $ per mile):
+    <br>
+    <br>
+    <div id=squares>
+          <div id=square2>lower</div>
+          <br>
+          <div id=square>higher</div>
+    </div>
+    </div>
+  </footer>
+</div>

@@ -39,6 +39,8 @@ export class MapresultComponent implements OnInit {
           zoom: 11,
           center: {lat: 40.710850, lng: -73.897766}
         });
+        this.map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push
+        (document.getElementById('legend'));
         this.map.data.loadGeoJson('../../assets/convert.json');
 
         var mappy = this.map.data;
