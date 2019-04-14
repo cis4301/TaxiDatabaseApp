@@ -14,10 +14,12 @@ import { TestComponent } from './test/test.component';
 import { MapresultComponent } from './mapresult/mapresult.component';
 import { NetflowComponent } from './netflow/netflow.component';
 import { CostComponent } from './cost/cost.component';
+import { TimegraphComponent } from './timegraph/timegraph.component';
 
 import { ValidateService } from './services/validate.service';
 import { DataService } from './services/data.service';
 import { MessageService } from './services/message.service';
+
 
 
 
@@ -29,7 +31,8 @@ const appRoutes: Routes = [
   {path:'test', component: TestComponent},
   {path:'mapresults', component: MapresultComponent},
   {path:'netflow', component: NetflowComponent},
-  {path: 'cost', component: CostComponent}
+  {path: 'cost', component: CostComponent},
+  {path: 'timegraph', component: TimegraphComponent}
 ]
 
 @NgModule({
@@ -43,7 +46,8 @@ const appRoutes: Routes = [
     TestComponent,
     MapresultComponent,
     NetflowComponent,
-    CostComponent
+    CostComponent,
+    TimegraphComponent
   ],
   imports: [
     BrowserModule,

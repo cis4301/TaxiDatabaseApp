@@ -5,6 +5,7 @@ const zones = require('../controllers/zones');
 const aggregate = require('../controllers/aggregate');
 const netflow = require('../controllers/netflow');
 const cost = require('../controllers/cost');
+const timegraph = require('../controllers/timegraph');
 
 router.route('/yellowtrips/:id?')
   .get(yellowtrips.get);
@@ -20,5 +21,8 @@ router.route('/netflow/')
 
 router.route('/cost/')
   .get(cost.get);
+
+router.route('/timegraph/')
+  .get(timegraph.get);
 
 module.exports = router;
