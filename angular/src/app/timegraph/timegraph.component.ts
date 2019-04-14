@@ -13,6 +13,15 @@ import * as CanvasJS from './canvasjs-2.3.1/canvasjs.min';
   styleUrls: ['./timegraph.component.css']
 })
 export class TimegraphComponent implements OnInit {
+  @ViewChild('gmap') gmapElement: any;
+  chart: any;
+  chartdata: any;
+  startZone: any;
+
+  options = this.messageService.zoneinfo;
+  optionSelected: any;
+  selection = false;
+
 
   constructor(
     private validateService: ValidateService,
@@ -22,38 +31,90 @@ export class TimegraphComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-  		let chart = new CanvasJS.Chart("chartContainer", {
+      CanvasJS.addColorSet("googleMapcolors",
+        [
+          '#8E8C84',
+          '#D6BF91',
+          '#E1A56D',
+          '#CEB166',
+          '#864D48'
+        ]);
+  		this.chart = new CanvasJS.Chart("chartContainer", {
   		animationEnabled: true,
   		exportEnabled: true,
+      colorSet: "googleMapcolors",
   		title: {
-  			text: "Zone popularity by Month"
+  			text: "Zone Popularity"
   		},
+      axisY: {
+        title: "Trips per month"
+      },
   		data: [{
   			type: "column",
   			dataPoints: [
-  				{ y: 71, label: "January" },
-  				{ y: 55, label: "February" },
-  				{ y: 50, label: "March" },
-  				{ y: 65, label: "April" },
-  				{ y: 95, label: "May" },
-  				{ y: 68, label: "June" },
-  				{ y: 28, label: "July" },
-  				{ y: 34, label: "August" },
-  				{ y: 14, label: "September" },
-          { y: 28, label: "October" },
-          { y: 34, label: "November" },
-          { y: 14, label: "December" }
-
-  			]
+          { label: "January", y: 1},
+          { label: "February", y: 2},
+          { label: "March", y: 3},
+          { label: "April", y: 4},
+          { label: "May", y: 5},
+          { label: "June", y: 6},
+          { label: "July", y: 7},
+          { label: "August", y: 8},
+          { label: "September", y: 9},
+          { label: "October", y: 10},
+          { label: "November", y: 11},
+          { label: "December", y: 12}
+        ]
   		}]
   	});
 
-  	chart.render();
+  	this.chart.render();
+
+
       }
 
   Back() {
     this.router.navigateByUrl('/');
   }
 
+async getChart() {
+      const delay = ms => new Promise(res => setTimeout(res, ms));
+
+      var chartdata = this.chartdata;
+      var zone = parseInt(this.optionSelected[0], 10);
+      var chart = this.chart;
+      var update = chart.options.data[0].dataPoints;
+      var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+      if (zone > 0) {
+        this.dataService.getPopularity(zone).subscribe((res:Response) => {
+          chartdata = res;
+        });
+      }
+
+
+      while(!chartdata) {
+        await delay(1000);
+        console.log("waited 1 second");
+      }
+
+      for (var i = 0; i < update.length; i ++) {
+        console.log(chartdata[i].COUNT);
+        console.log(chartdata[i].MONTH);
+        update[i] = { label: months[i], y: chartdata[i].COUNT};
+      }
+      chart.options.data[0].dataPoints = update;
+      chart.render();
+
+
+
+      console.log(chartdata);
+
+
+
+  }
+  onOptionsSelected(event){
+    console.log(event); //option value will be sent as event
+  }
 
 }

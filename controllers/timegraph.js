@@ -4,7 +4,7 @@ async function get(req, res, next) {
   try {
     const context = {};
 
-      context.month = parseInt(req.query.month, 10);
+      context.timezone = parseInt(req.query.timezone, 10);
 
 
     const rows = await timegraph.find(context);

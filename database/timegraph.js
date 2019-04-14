@@ -6,10 +6,10 @@ const basequery =
 async function find(context) {
   let query = basequery;
   const binds = {};
-  if (context.month) {
-    binds.month = context.month
-    query += ', QUERY2 AS( SELECT * FROM QUERY1 WHERE :month = 12)';
-    query += 'SELECT COUNT(tripID) AS count, ENDZONE AS zone FROM QUERY2 GROUP BY ENDZONE';
+  if (context.timezone) {
+    binds.zone = context.timezone
+    query += ', QUERY2 AS( SELECT * FROM QUERY1 WHERE endzone = :zone)';
+    query += 'SELECT COUNT(tripID) AS count, month FROM QUERY2 GROUP BY month ORDER BY month ASC';
   }
 
   const result = await database.simpleExecute(query, binds);

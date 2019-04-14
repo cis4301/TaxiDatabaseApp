@@ -41,6 +41,12 @@ export class DataService {
     return this.http.get('http://localhost:3000/database/netflow/?hour=' + hour, {headers: headers})
   }
 
+  getPopularity(zone) {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3000/database/timegraph/?timezone=' + zone, {headers: headers})
+  }
+
   getNetCost(hour) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');

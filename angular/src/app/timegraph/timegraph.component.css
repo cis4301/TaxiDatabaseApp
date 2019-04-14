@@ -14,6 +14,9 @@
   justify-content: space-between;
 }
 
+.select-option {
+  
+}
 .menu {
   border: 1px solid #fff;  /* For debugging */
   width: 900px;
@@ -26,7 +29,7 @@
 
 
 .container {
-padding-top: 50px;
+padding-top: 100px;
 position:relative;
 height: 100vh;
 width: 100vh;
