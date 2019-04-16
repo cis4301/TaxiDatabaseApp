@@ -36,8 +36,7 @@ export class TimegraphComponent implements OnInit {
           '#8E8C84',
           '#D6BF91',
           '#E1A56D',
-          '#CEB166',
-          '#864D48'
+          
         ]);
   		this.chart = new CanvasJS.Chart("chartContainer", {
   		animationEnabled: true,
