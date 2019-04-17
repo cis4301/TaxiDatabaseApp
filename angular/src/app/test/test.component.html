@@ -1,67 +1,94 @@
-<h2 class="page-header">Back-end test</h2>
-<br>
-    <form>
-    <div class="form-group">
-        <label>Trip Number:</label>
-        <input type="text" [(ngModel)]="id" name="id" class="form-control">
+<div class = "inputforms">
+  <div class="pimg5">
+    <div class = "ptext">
+      <span class = "border">
+        Back End Test Page
+      </span>
+     </div>
     </div>
-    </form>
-  <input type="submit" (click) = "onTestSubmit()" class="btn btn-primary" value="Locate">
-<br>
-<br>
-<form (submit)="onZoneSubmit()">
-  <div class="form-group">
-    <label>Zone Number:</label>
-    <input type="text" [(ngModel)]="zone" name="zone" class="form-control">
-  </div>
-</form>
-<input type="submit" (click) = "onZoneSubmit()" class="btn btn-primary" value="Locate">
+<section class="section section-light">
 
-    <br>
-    <br>
-<h3> Data for Trip  {{id}} </h3>
-<div class="col-lg-4">
-<div class="bs-component">
-<ul>
+      <br>
+      <form>
+      <div class="form-group">
+          <label>Trip Number:</label>
+          <input type="text" [(ngModel)]="id" name="id" class="form-control">
+      </div>
+      </form>
+    <input type="submit" (click) = "onTestSubmit()" class="btn btn-primary" value="Locate">
   <br>
-<pre> Trip Distance: {{ this.distance }} </pre>
-<pre> Total Amount:  {{ this.amount  }} </pre>
-<pre> Passenger Count: {{ this.passengers }} </pre>
-<pre> Pickup Zone: {{ this.pickupzone }} </pre>
-<pre> Dropoff Zone: {{ this.dropoffzone }} </pre>
+  <br>
+  <form (submit)="onZoneSubmit()">
+    <div class="form-group">
+      <label>Zone Number:</label>
+      <input type="text" [(ngModel)]="zone" name="zone" class="form-control">
+    </div>
+  </form>
+  <input type="submit" (click) = "onZoneSubmit()" class="btn btn-primary" value="Locate">
 
+  <p class = "backendtest">
+    Use this form field to get data for a specific zone or trip.
+    Zones range from 1 to 265.  Trips take any value up to 7 million.
+    After executing any query basic database stats will be displayed below
+    </p>
+</section>
 
-</ul>
+<section class="section section-dark">
+  <h3> Trip Data:  {{id}} </h3>
     <br>
-  </div>
-</div>
-
-<h4> Data for pickup zone </h4>
-<div class="col-lg-4">
-<div class="bs-component">
+  <div class="col-lg-4">
+  <div class="bs-component">
   <ul>
     <br>
-  <pre> Zone Number: {{ this.location1 }} </pre>
-  <pre> Name of Borough:  {{ this.borough1  }} </pre>
-  <pre> Zone Name: {{ this.zonename1 }} </pre>
-  <pre> Yellow Exclusive:  {{ this.yellowexclusive1  }} </pre>
-  </ul>
+  <p> Trip Distance: {{ this.distance }} </p>
+  <p> Total Amount:  {{ this.amount  }} </p>
+  <p> Passenger Count: {{ this.passengers }} </p>
+  <p> Pickup Zone: {{ this.pickupzone }} </p>
+  <p> Dropoff Zone: {{ this.dropoffzone }} </p>
 
-  </div>
-</div>
-<h4> Data for dropoff zone </h4>
-<div class="col-lg-4">
-<div class="bs-component">
-  <ul>
-    <br>
-  <pre> Zone Number: {{ this.location2 }} </pre>
-  <pre> Name of Borough:  {{ this.borough2  }} </pre>
-  <pre> Zone Name: {{ this.zonename2 }} </pre>
-  <pre> Yellow Exclusive:  {{ this.yellowexclusive2  }} </pre>
+
   </ul>
-  <br>
-  <br>
-    <pre> Data Obtained (JSON):{{ this.zonedata1 | json }} </pre>
-    <pre> Data Obtained (JSON):{{ this.tripdata2 | json }} </pre>
+      <br>
+    </div>
   </div>
+
+</section>
+
+    <section class="section section-light">
+
+      <h3> Zone data:</h3>
+        <br>
+      <div class="col-lg-4">
+      <div class="bs-component">
+        <ul>
+          <br>
+        <p> Zone Number: {{ this.location1 }} </p>
+        <p> Name of Borough:  {{ this.borough1  }}</p>
+        <p> Zone Name: {{ this.zonename1 }} </p>
+        <p> Yellow Exclusive:  {{ this.yellowexclusive1  }} </p>
+        </ul>
+
+        </div>
+      </div>
+
+        <br>
+      <div class="col-lg-4">
+      <div class="bs-component">
+        <ul>
+          <br>
+        <p> Zone Number: {{ this.location2 }} </p>
+        <p> Name of Borough:  {{ this.borough2  }} </p>
+        <p> Zone Name: {{ this.zonename2 }} </p>
+        <p> Yellow Exclusive:  {{ this.yellowexclusive2  }} </p>
+        </ul>
+        <br>
+        <br>
+          <p> Data Obtained (JSON):{{ this.zonedata1 | json }} </p>
+          <p> Data Obtained (JSON):{{ this.tripdata2 | json }} </p>
+        </div>
+      </div>
+      <p class = "backendtest">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis voluptate quis tenetur quae similique possimus eius mollitia earum natus nesciunt voluptas ab sunt quod eligendi, dolor architecto quidem libero tempora repellat eum iusto hic, ducimus corporis. Doloribus omnis maxime hic aspernatur nemo dicta accusamus esse, a, eum magnam, nihil amet debitis nostrum quidem voluptatibus adipisci assumenda. Quae recusandae, eveniet quidem ipsa quasi illum, deleniti repudiandae aliquid quo illo saepe iusto eum error nostrum laboriosam animi autem iure odit qui rerum ut est, perferendis! Repudiandae facere pariatur nesciunt, debitis maxime quod. Natus, sunt illo quam, neque molestias perspiciatis nam qui rerum!
+      </p>
+    </section>
 </div>

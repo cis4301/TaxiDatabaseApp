@@ -49,6 +49,22 @@ body, html{
   min-height:400px;
 }
 
+.pimg5 {
+  background-image:url('./assets/img/image5.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: fixed;
+}
+
 .pimg1-2 {
   background-image:url('./assets/img/image1.jpg');
   min-height:100vh;
@@ -72,12 +88,12 @@ body, html{
 
 .section-light{
   background-color: #f4f4f4;
-  color:#666;
+  color:#666 !important;
 }
 
 .section-dark{
   background-color: #282e34;
-  color:#ddd;
+  color:#ddd !important;
 }
 
 .ptext {
