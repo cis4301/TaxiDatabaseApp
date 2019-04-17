@@ -19,6 +19,31 @@
 
 }
 
+.map-content {
+    z-index: 10;
+    position: absolute;
+    top: 43vh;
+    left: 1vh;
+    width: 390px;
+    border-color: transparent !important;
+    background-color: transparent !important;
+    color: transparent !important;
+}
+.menu-container {
+  color: #000;
+    /* Blue */
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  border-color: transparent !important;
+  background-color: #E8E8E8 !important;
+}
+.menu {
+  border: 1px solid #fff;  /* For debugging */
+  width: 900px;
+  justify-content: space-between;
+  border-color: transparent !important;
+}
 #legendtext {
   float:left
 }

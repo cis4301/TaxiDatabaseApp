@@ -1,7 +1,17 @@
-<div class="container">
-
-        <div id = "map" style="width:100vh;height:80vh" ></div>
-
+<div class="pimg5-2">
+  <div class = "ptext">
+    <span class = "border">
+      NET INFLOW/OUTFLOW
+    </span>
+   </div>
+  </div>
+  <section class="section section-dark">
+    <p>
+      A visualization of the net flow into and out of zones by time of day.  Red represents a net outflow while blue represents a net inflow
+    Experiment with different times to observe popularity trends.</p>
+    </section>
+        <div id = "map" style = "width: 100%; height: 100vh" ></div>
+    <div class = "map-content">
         <div class = "menu-container">
             <div class = "menu">
               Choose a time of day:
@@ -15,30 +25,22 @@
               <button (click)="setHour()" class="btn btn-primary" style = "float: right"> Color My Map! </button>
             </div>
         </div>
-  <br>
+        </div>
+
   <footer>
-    <div class="row">
-      <div>
-        <span class="label label-primary">Author:  </span>
+    <section class="section section-dark">
+      <div class="row">
+        <div>
+          <span class="label label-primary">Author:  </span>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-1">
-        <a href="https://www.linkedin.com/in/balram-chavan-957511116/" target="_blank">LinkedIn</a>
+      <div class="row">
+        <div class="col-md-1">
+          <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+        </div>
+        <div class="col-md-1">
+          <a href="https://github.com/hackleman" target="_blank">GitHub</a>
+        </div>
       </div>
-      <div class="col-md-1">
-        <a href="https://github.com/ultrasonicsoft" target="_blank">GitHub</a>
-      </div>
-    </div>
-    <div id="legend">
-    Net Flow:
-    <br>
-    <br>
-    <div id=squares>
-          <div id=square2>Inflow</div>
-          <br>
-          <div id=square>Outflow</div>
-    </div>
-    </div>
+      </section>
   </footer>
-</div>

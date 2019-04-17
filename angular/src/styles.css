@@ -65,6 +65,38 @@ body, html{
   background-attachment: fixed;
 }
 
+.pimg5-1 {
+  background-image:url('./assets/img/image4.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: fixed;
+}
+
+.pimg5-2 {
+  background-image:url('./assets/img/image3.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: fixed;
+}
+
 .pimg1-2 {
   background-image:url('./assets/img/image1.jpg');
   min-height:100vh;
