@@ -82,7 +82,7 @@ body, html{
 }
 
 .pimg5-2 {
-  background-image:url('./assets/img/image3.jpg');
+  background-image:url('./assets/img/image8.jpg');
   min-height:25vh;
   width: 100%;
   position: relative;
@@ -96,6 +96,23 @@ body, html{
     */
   background-attachment: fixed;
 }
+
+.pimg5-3 {
+  background-image:url('./assets/img/image9.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: fixed;
+}
+
 
 .pimg1-2 {
   background-image:url('./assets/img/image1.jpg');
@@ -119,8 +136,8 @@ body, html{
 }
 
 .section-light{
-  background-color: #f4f4f4;
-  color:#666 !important;
+  background-color: #CFD0D1;
+  color: #4A4A4A !important;
 }
 
 .section-dark{
