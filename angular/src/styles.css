@@ -112,7 +112,131 @@ body, html{
     */
   background-attachment: fixed;
 }
+.pimg4index {
+  background-image:url('./assets/img/image6.jpg');
+  min-height:35vh;
+  width: 100%;
+  position: relative;
+  opacity: ;
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: fixed;
+}
 
+.pimg4index1 {
+  background-image:url('./assets/img/image2.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+.pimg4index2 {
+  background-image:url('./assets/img/image9.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+.pimg5index {
+  background-image:url('./assets/img/image7.jpg');
+  min-height:35vh;
+  width: 100%;
+  position: relative;
+  opacity: ;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: fixed;
+}
+
+.pimg5index1 {
+  background-image:url('./assets/img/image3.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+
+.pimg5index2 {
+  background-image:url('./assets/img/image11.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+
+.pimg5index3 {
+  background-image:url('./assets/img/image5.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+
+.pimg5index4 {
+  background-image:url('./assets/img/image10.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
 
 .pimg1-2 {
   background-image:url('./assets/img/image1.jpg');
@@ -127,7 +251,7 @@ body, html{
     fixed = Parallax
     scroll = normal
     */
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 
 .section{

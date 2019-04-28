@@ -19,6 +19,8 @@ import { TimegraphComponent } from './timegraph/timegraph.component';
 import { ValidateService } from './services/validate.service';
 import { DataService } from './services/data.service';
 import { MessageService } from './services/message.service';
+import { MapsindexComponent } from './mapsindex/mapsindex.component';
+import { ChartsindexComponent } from './chartsindex/chartsindex.component';
 
 
 
@@ -32,7 +34,9 @@ const appRoutes: Routes = [
   {path:'mapresults', component: MapresultComponent},
   {path:'netflow', component: NetflowComponent},
   {path: 'cost', component: CostComponent},
-  {path: 'timegraph', component: TimegraphComponent}
+  {path: 'timegraph', component: TimegraphComponent},
+  {path: 'mapsindex', component: MapsindexComponent},
+  {path: 'chartsindex', component: ChartsindexComponent}
 ]
 
 @NgModule({
@@ -47,7 +51,9 @@ const appRoutes: Routes = [
     MapresultComponent,
     NetflowComponent,
     CostComponent,
-    TimegraphComponent
+    TimegraphComponent,
+    MapsindexComponent,
+    ChartsindexComponent
   ],
   imports: [
     BrowserModule,
