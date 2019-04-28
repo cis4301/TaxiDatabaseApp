@@ -42,11 +42,26 @@ body, html{
 .pimg2{
   background-image:url('./assets/img/image7.jpg');
   min-height:400px;
+  cursor: pointer;
 }
 
 .pimg3{
   background-image:url('./assets/img/image6.jpg');
   min-height:400px;
+  cursor: pointer;
+}
+.pimg2:hover{
+  background-image:url('./assets/img/image7.jpg');
+  min-height:400px;
+  cursor: pointer;
+  opacity: .8;
+}
+
+.pimg3:hover {
+  background-image:url('./assets/img/image6.jpg');
+  min-height:400px;
+  cursor: pointer;
+  opacity: .8;
 }
 
 .pimg5 {
@@ -137,13 +152,30 @@ body, html{
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  cursor: pointer;
   /*
     fixed = Parallax
     scroll = normal
     */
   background-attachment: scroll;
 }
-.pimg4index2 {
+.pimg4index1:hover {
+  background-image:url('./assets/img/image2.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: .8;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+.pimg4index2  {
   background-image:url('./assets/img/image9.jpg');
   min-height:25vh;
   width: 100%;
@@ -152,18 +184,36 @@ body, html{
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
+  cursor: pointer;
   /*
     fixed = Parallax
     scroll = normal
     */
   background-attachment: scroll;
 }
+.pimg4index2:hover  {
+  background-image:url('./assets/img/image9.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: .8;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+
 .pimg5index {
   background-image:url('./assets/img/image7.jpg');
   min-height:35vh;
   width: 100%;
   position: relative;
-  opacity: ;
+  opacity: 1;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -183,6 +233,7 @@ body, html{
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  cursor: pointer;
   /*
     fixed = Parallax
     scroll = normal
@@ -199,6 +250,7 @@ body, html{
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  cursor: pointer;
   /*
     fixed = Parallax
     scroll = normal
@@ -215,6 +267,7 @@ body, html{
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  cursor: pointer;
   /*
     fixed = Parallax
     scroll = normal
@@ -231,6 +284,7 @@ body, html{
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  cursor: pointer;
   /*
     fixed = Parallax
     scroll = normal
@@ -238,6 +292,74 @@ body, html{
   background-attachment: scroll;
 }
 
+
+.pimg5index1:hover  {
+  background-image:url('./assets/img/image3.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: .9;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+
+.pimg5index2:hover  {
+  background-image:url('./assets/img/image11.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: .9;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+
+.pimg5index3:hover  {
+  background-image:url('./assets/img/image5.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: .9;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+
+.pimg5index4:hover {
+  background-image:url('./assets/img/image10.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: .9;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
 .pimg1-2 {
   background-image:url('./assets/img/image1.jpg');
   min-height:100vh;
