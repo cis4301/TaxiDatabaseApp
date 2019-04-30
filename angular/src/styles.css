@@ -5,8 +5,16 @@
   width: 90%;
   margin-left: 5vw;
   margin-right: 5vw;
-  height: 50%;
+  height: 50vh;
 
+}
+
+.testchart-footer {
+  clear: both;
+  position: relative;
+  height: 40px;
+  margin-top: -40px;
+  bottom:0
 }
 body, html{
   height: 100%;
@@ -390,6 +398,10 @@ body, html{
 
 .section-light{
   background-color: #CFD0D1;
+  color: #4A4A4A !important;
+}
+.section-white{
+  background-color: white;
   color: #4A4A4A !important;
 }
 
