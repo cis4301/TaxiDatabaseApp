@@ -21,7 +21,8 @@ import { DataService } from './services/data.service';
 import { MessageService } from './services/message.service';
 import { MapsindexComponent } from './mapsindex/mapsindex.component';
 import { ChartsindexComponent } from './chartsindex/chartsindex.component';
-
+import { TestchartComponent } from './charts/testchart/testchart.component';
+import { ChartsModule } from 'ng2-charts';
 
 
 
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
   {path: 'cost', component: CostComponent},
   {path: 'timegraph', component: TimegraphComponent},
   {path: 'mapsindex', component: MapsindexComponent},
-  {path: 'chartsindex', component: ChartsindexComponent}
+  {path: 'chartsindex', component: ChartsindexComponent},
+  {path: 'testchart', component: TestchartComponent}
 ]
 
 @NgModule({
@@ -53,12 +55,14 @@ const appRoutes: Routes = [
     CostComponent,
     TimegraphComponent,
     MapsindexComponent,
-    ChartsindexComponent
+    ChartsindexComponent,
+    TestchartComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    ChartsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [ValidateService, DataService, MessageService],

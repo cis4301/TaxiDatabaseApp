@@ -1,6 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
+.chart-container {
 
+  width: 90%;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  height: 50%;
+
+}
 body, html{
   height: 100%;
   margin:0;
@@ -409,6 +416,19 @@ body, html{
   color: yellow;
   padding:20px;
 }
+.border1 {
+  border-color: transparent !important;
+  background-color: #111111 !important;
+  color: white;
+  padding:20px;
+}
+.border2 {
+  border-color: transparent !important;
+  background-color: #111111 !important;
+  color: white;
+  padding:20px;
+}
+
 
 .ptext .border .trans{
   background-color: transparent
