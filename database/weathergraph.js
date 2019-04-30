@@ -13,8 +13,14 @@ async function find(context) {
       query += 'SELECT AVG(datediff/distance) AS triptime, windspeed FROM QUERY3 GROUP BY windspeed ORDER BY WINDSPEED ASC';
   } else if (context.type == 2) {
       query += 'SELECT AVG(datediff/distance) AS triptime, temperature FROM QUERY3 GROUP BY temperature ORDER BY  temperature ASC';
-  } else {
+  } else if (context.type == 3){
       query += 'SELECT AVG(datediff/distance) AS triptime, condition FROM QUERY3 GROUP BY condition';
+  } else if (context.type == 4) {
+      query += 'SELECT AVG(totalcost/distance) AS avgcost, temperature FROM QUERY3 GROUP BY temperature ORDER BY  temperature ASC';
+  } else if (context.type == 5){
+      query += 'SELECT AVG(totalcost/distance) AS avgcost, condition FROM QUERY3 GROUP BY condition';
+  } else if (context.type == 6){
+      query += 'SELECT AVG(totalcost/distance) AS avgcost, windspeed FROM QUERY3 GROUP BY windspeed ORDER BY  windspeed ASC';
   }
 
   const result = await database.simpleExecute(query, binds);

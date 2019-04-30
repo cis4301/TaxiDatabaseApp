@@ -157,6 +157,21 @@ body, html{
     */
   background-attachment: fixed;
 }
+.pimg5-5 {
+  background-image:url('./assets/img/image13.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: fixed;
+}
 .pimg4index {
   background-image:url('./assets/img/image12.jpg');
   min-height:35vh;
@@ -223,6 +238,39 @@ body, html{
 }
 .pimg4index2:hover  {
   background-image:url('./assets/img/image10.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: .8;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+
+.pimg4index3  {
+  background-image:url('./assets/img/image13.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+.pimg4index3:hover  {
+  background-image:url('./assets/img/image13.jpg');
   min-height:25vh;
   width: 100%;
   position: relative;

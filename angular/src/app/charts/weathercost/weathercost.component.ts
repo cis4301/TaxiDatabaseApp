@@ -9,11 +9,12 @@ import { ChartDataSets, ChartOptions, Chart } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 
 @Component({
-  selector: 'app-weatherchart',
-  templateUrl: './weatherchart.component.html',
-  styleUrls: ['./weatherchart.component.css']
+  selector: 'app-weathercost',
+  templateUrl: './weathercost.component.html',
+  styleUrls: ['./weathercost.component.css']
 })
-export class WeatherchartComponent implements OnInit {
+export class WeathercostComponent implements OnInit {
+
   @ViewChild('lineChart') private chartReference;
   @ViewChild('overlay') el:ElementRef;
   @ViewChild('canvasChart') canvasChart: ElementRef;
@@ -26,7 +27,7 @@ export class WeatherchartComponent implements OnInit {
       responsive: true,
       title: {
         display: true,
-        text: 'Average Time (minutes / mile)',
+        text: 'Average Fare',
         fontSize: 36
       },
       scales: {
@@ -73,12 +74,13 @@ export class WeatherchartComponent implements OnInit {
     });
   }
 
-    async TempResults() {
+  async TempResults() {
+
         this.el.nativeElement.style.display='block';
         const delay = ms => new Promise(res => setTimeout(res, ms));
 
         // retrieve data from the server
-       this.dataService.getTempResults().subscribe((res:Response) => {
+       this.dataService.getTempResults2().subscribe((res:Response) => {
           this.chartdata = res;
         });
 
@@ -89,7 +91,7 @@ export class WeatherchartComponent implements OnInit {
         this.el.nativeElement.style.display='none';
         // restructure chart data to 1-dimensional array
         var newdata = this.chartdata.map(function (data) {
-          return (data.TRIPTIME / 60);
+          return (data.AVGCOST);
         });
         var newlabels = this.chartdata.map(function (data) {
           return data.TEMPERATURE;
@@ -97,7 +99,7 @@ export class WeatherchartComponent implements OnInit {
 
         this.chartData2 = [
           { data: newdata,
-            label: "Average Time (min / mile)",
+            label: "Average Cost (dollars per mile)",
             borderColor: '#00AEFF',
             fill: false}
           ];
@@ -108,7 +110,7 @@ export class WeatherchartComponent implements OnInit {
             responsive: true,
             title: {
               display: true,
-              text: 'Average Time (minutes / mile)',
+              text: 'Average Fare',
               fontSize: 36
             },
             scales: {
@@ -137,12 +139,13 @@ export class WeatherchartComponent implements OnInit {
 
     }
 
-    async Windspeed() {
+  async Windspeed() {
+
       this.el.nativeElement.style.display='block';
       const delay = ms => new Promise(res => setTimeout(res, ms));
 
       // retrieve data from the server
-     this.dataService.getWindspeed().subscribe((res:Response) => {
+     this.dataService.getWindspeed2().subscribe((res:Response) => {
         this.chartdata = res;
       });
 
@@ -153,7 +156,7 @@ export class WeatherchartComponent implements OnInit {
       this.el.nativeElement.style.display='none';
       // restructure chart data to 1-dimensional array
       var newdata = this.chartdata.map(function (data) {
-        return (data.TRIPTIME / 60);
+        return (data.AVGCOST);
     });
       var newlabels = this.chartdata.map(function (data) {
         return data.WINDSPEED;
@@ -161,7 +164,7 @@ export class WeatherchartComponent implements OnInit {
 
       this.chartData2 = [
         { data: newdata,
-          label: "Average Time (minutes / mile)",
+          label: "Average Cost (dollars / mile)",
           borderColor: '#00AEFF',
           fill: false}
         ];
@@ -172,7 +175,7 @@ export class WeatherchartComponent implements OnInit {
           responsive: true,
           title: {
             display: true,
-            text: 'Average Time (minutes / mile)',
+            text: 'Average Fare',
             fontSize: 36
           },
           scales: {
@@ -198,69 +201,70 @@ export class WeatherchartComponent implements OnInit {
       this.chartdata = null;
       this.chart.update();
 
+    }
+
+  async Condition() {
+      this.el.nativeElement.style.display='block';
+      const delay = ms => new Promise(res => setTimeout(res, ms));
+
+      // retrieve data from the server
+     this.dataService.getCondition2().subscribe((res:Response) => {
+        this.chartdata = res;
+      });
+
+      while(!this.chartdata) {
+        await delay(1000);
+        console.log("waited 1 second");
       }
+      this.el.nativeElement.style.display='none';
+      // restructure chart data to 1-dimensional array
+      var newdata = this.chartdata.map(function (data) {
+        return (data.AVGCOST);
+      });
+      var newlabels = this.chartdata.map(function (data) {
+        return data.CONDITION;
+      })
 
-    async Condition() {
-        this.el.nativeElement.style.display='block';
-        const delay = ms => new Promise(res => setTimeout(res, ms));
+      this.chartData2 = [
+        { data: newdata,
+          label: "Average Cost (dollars per mile)",
+          borderColor: '#00AEFF',
+          fill: false}
+        ];
 
-        // retrieve data from the server
-       this.dataService.getCondition().subscribe((res:Response) => {
-          this.chartdata = res;
-        });
+      this.context = (<HTMLCanvasElement> this.chartReference.nativeElement).getContext('2d');
 
-        while(!this.chartdata) {
-          await delay(1000);
-          console.log("waited 1 second");
-        }
-        this.el.nativeElement.style.display='none';
-        // restructure chart data to 1-dimensional array
-        var newdata = this.chartdata.map(function (data) {
-          return (data.TRIPTIME / 60);
-        });
-        var newlabels = this.chartdata.map(function (data) {
-          return data.CONDITION;
-        })
-
-        this.chartData2 = [
-          { data: newdata,
-            label: "Average Time (min / mile)",
-            borderColor: '#00AEFF',
-            fill: false}
-          ];
-
-        this.context = (<HTMLCanvasElement> this.chartReference.nativeElement).getContext('2d');
-
-        this.chartOptions = {
-            responsive: true,
-            title: {
-              display: true,
-              text: 'Average Time (minutes / mile)',
-              fontSize: 36
-            },
-            scales: {
-              xAxes: [{
-                scaleLabel: {
-                  display: true,
-                  labelString: 'Weather Condition',
-                  fontSize: 20,
-                  fontFamily: 'Helvetica'
-                }
-              }]
-            }
-          };
-
-        this.chart = new Chart(this.context, {
-          type: 'line',
-          data: {
-            labels: newlabels, // your labels array
-            datasets: this.chartData2
+      this.chartOptions = {
+          responsive: true,
+          title: {
+            display: true,
+            text: 'Average Fare',
+            fontSize: 36
           },
-          options: this.chartOptions
-        });
-        this.chartdata = null;
-        this.chart.update();
-
+          scales: {
+            xAxes: [{
+              scaleLabel: {
+                display: true,
+                labelString: 'Weather Condition',
+                fontSize: 20,
+                fontFamily: 'Helvetica'
+              }
+            }]
           }
+        };
+
+      this.chart = new Chart(this.context, {
+        type: 'line',
+        data: {
+          labels: newlabels, // your labels array
+          datasets: this.chartData2
+        },
+        options: this.chartOptions
+      });
+      this.chartdata = null;
+      this.chart.update();
+
+        }
+
 
 }

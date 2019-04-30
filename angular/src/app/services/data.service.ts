@@ -46,6 +46,7 @@ export class DataService {
     headers.append('Content-Type', 'application/json');
     return this.http.get('http://localhost:3000/database/timegraph/?timezone=' + zone, {headers: headers})
   }
+  // Routes for Weather charts based on average trip time
 
   getTempResults() {
     let headers = new HttpHeaders();
@@ -63,6 +64,25 @@ export class DataService {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
     return this.http.get('http://localhost:3000/database/weathergraph/?type=3', {headers: headers})
+  }
+  // Routes for Weather charts based on average fare
+
+  getTempResults2() {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3000/database/weathergraph/?type=4', {headers: headers})
+  }
+
+  getWindspeed2() {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3000/database/weathergraph/?type=6', {headers: headers})
+  }
+
+  getCondition2() {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3000/database/weathergraph/?type=5', {headers: headers})
   }
 
   getNetCost(hour) {
