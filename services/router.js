@@ -6,6 +6,7 @@ const aggregate = require('../controllers/aggregate');
 const netflow = require('../controllers/netflow');
 const cost = require('../controllers/cost');
 const timegraph = require('../controllers/timegraph');
+const weathergraph = require('../controllers/weathergraph');
 
 router.route('/yellowtrips/:id?')
   .get(yellowtrips.get);
@@ -24,5 +25,8 @@ router.route('/cost/')
 
 router.route('/timegraph/')
   .get(timegraph.get);
+
+router.route('/weathergraph/')
+  .get(weathergraph.get);
 
 module.exports = router;

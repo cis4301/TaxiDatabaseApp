@@ -61,7 +61,7 @@ body, html{
 }
 
 .pimg3{
-  background-image:url('./assets/img/image6.jpg');
+  background-image:url('./assets/img/image12.jpg');
   min-height:400px;
   cursor: pointer;
 }
@@ -69,14 +69,14 @@ body, html{
   background-image:url('./assets/img/image7.jpg');
   min-height:400px;
   cursor: pointer;
-  opacity: .8;
+  opacity: .85;
 }
 
 .pimg3:hover {
-  background-image:url('./assets/img/image6.jpg');
+  background-image:url('./assets/img/image12.jpg');
   min-height:400px;
   cursor: pointer;
-  opacity: .8;
+  opacity: .85;
 }
 
 .pimg5 {
@@ -142,13 +142,28 @@ body, html{
     */
   background-attachment: fixed;
 }
+.pimg5-4 {
+  background-image:url('./assets/img/image10.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: fixed;
+}
 .pimg4index {
-  background-image:url('./assets/img/image6.jpg');
+  background-image:url('./assets/img/image12.jpg');
   min-height:35vh;
   width: 100%;
   position: relative;
   opacity: ;
-  background-position: bottom;
+  background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
   /*
@@ -191,7 +206,7 @@ body, html{
   background-attachment: scroll;
 }
 .pimg4index2  {
-  background-image:url('./assets/img/image9.jpg');
+  background-image:url('./assets/img/image10.jpg');
   min-height:25vh;
   width: 100%;
   position: relative;
@@ -207,7 +222,7 @@ body, html{
   background-attachment: scroll;
 }
 .pimg4index2:hover  {
-  background-image:url('./assets/img/image9.jpg');
+  background-image:url('./assets/img/image10.jpg');
   min-height:25vh;
   width: 100%;
   position: relative;
@@ -433,6 +448,32 @@ body, html{
   background-color: #111111 !important;
   color: white;
   padding:20px;
+}
+.btn {
+  border-color: transparent !important;
+  background-color: #111111 !important;
+  color: white;
+  padding:10px;
+}
+.btn:hover {
+  border-color: transparent !important;
+  background-color: #111111 !important;
+  color: white;
+  padding:10px;
+  opacity:.8;
+}
+.btn-1 {
+  border-color: transparent !important;
+  background-color: #111111 !important;
+  color: yellow;
+  padding:15px;
+}
+.btn-1:hover {
+  border-color: transparent !important;
+  background-color: #111111 !important;
+  color: white;
+  padding:15px;
+  opacity:.8;
 }
 .border2 {
   border-color: transparent !important;

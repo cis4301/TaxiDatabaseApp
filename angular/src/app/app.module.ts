@@ -23,6 +23,7 @@ import { MapsindexComponent } from './mapsindex/mapsindex.component';
 import { ChartsindexComponent } from './chartsindex/chartsindex.component';
 import { TestchartComponent } from './charts/testchart/testchart.component';
 import { ChartsModule } from 'ng2-charts';
+import { WeatherchartComponent } from './charts/weatherchart/weatherchart.component';
 
 
 
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
   {path: 'timegraph', component: TimegraphComponent},
   {path: 'mapsindex', component: MapsindexComponent},
   {path: 'chartsindex', component: ChartsindexComponent},
-  {path: 'testchart', component: TestchartComponent}
+  {path: 'testchart', component: TestchartComponent},
+  {path: 'weatherchart', component: WeatherchartComponent}
 ]
 
 @NgModule({
@@ -56,7 +58,8 @@ const appRoutes: Routes = [
     TimegraphComponent,
     MapsindexComponent,
     ChartsindexComponent,
-    TestchartComponent
+    TestchartComponent,
+    WeatherchartComponent
   ],
   imports: [
     BrowserModule,

@@ -1,27 +1,25 @@
-<div class="pimg5-3">
+<div class="pimg5-4">
   <div class = "ptext">
     <span class = "border1">
-      Popularity Over Time
+      Weather and Average Fare
     </span>
    </div>
   </div>
 
 <section class="section section-dark">
   <p class = "backendtest">
-    Use this page to get the popularity for a specific zone by month.
-    Zones range from 1 to 265.  After Pressing Locate the graph will change
-    to display your results.  For a complete listing of zones, reference the maps section.
-  <form (submit)="onZoneSubmit()">
-    <div class="form-group">
-      <input type="text" [(ngModel)]="zone" name="zone" class="form-control">
-    </div>
-  </form>
-  <input type="submit" (click) = "onZoneSubmit()" class="btn btn-primary" value="Locate"> &nbsp;
-  <input type="submit" (click) = "onZoneCompare()" class="btn btn-primary" value="Compare">
+    Use this page to analyze average trip times and fares in varying weather conditions.
+    Click one of the buttons to sort results based on temperature windspeed or overall weather
+    condition.
+  <div>
+  <input type="submit" (click) = "TempResults()" class="btn-1" value="Temperature"> &nbsp;
+  <input type="submit" (click) = "Windspeed()" class="btn-1" value="Windspeed"> &nbsp;
+  <input type="submit" (click) = "Condition()" class="btn-1" value="Conditions"> &nbsp;
+  </div>
 </section>
 
 <section class="section section-white">
-
+<div id="overlay" #overlay><div id="text">Loading...</div></div>
     <canvas #lineChart> {{ chart }}
     </canvas>
 
