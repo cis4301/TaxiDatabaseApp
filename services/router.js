@@ -7,8 +7,7 @@ const netflow = require('../controllers/netflow');
 const cost = require('../controllers/cost');
 const timegraph = require('../controllers/timegraph');
 const weathergraph = require('../controllers/weathergraph');
-const weathermap = require('../controllers/weathermap');
-const weatherpopulation = require('../controllers/weatherpopulation');
+const weathertripavg = require('../controllers/weathertripavg');
 
 router.route('/yellowtrips/:id?')
   .get(yellowtrips.get);
@@ -30,6 +29,9 @@ router.route('/timegraph/')
 
 router.route('/weathergraph/')
   .get(weathergraph.get);
+
+router.route('/weathertripavg/')
+  .get(weathertripavg.get);
 
 router.route('/weathermap/')
   .get(weathermap.get);
