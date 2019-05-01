@@ -15,7 +15,7 @@
           <input type="text" [(ngModel)]="id" name="id" class="form-control">
       </div>
       </form>
-    <input type="submit" (click) = "onTestSubmit()" class="btn btn-primary" value="Locate">
+    <input type="submit" (click) = "onTestSubmit()" class="btn-2" value="Locate">
   <br>
   <br>
   <form (submit)="onZoneSubmit()">
@@ -24,7 +24,7 @@
       <input type="text" [(ngModel)]="zone" name="zone" class="form-control">
     </div>
   </form>
-  <input type="submit" (click) = "onZoneSubmit()" class="btn btn-primary" value="Locate">
+  <input type="submit" (click) = "onZoneSubmit()" class="btn-2" value="Locate">
 
   <p class = "backendtest">
     Use this form field to get data for a specific zone or trip.
@@ -87,7 +87,21 @@
           <p> Data Obtained (JSON):{{ this.tripdata2 | json }} </p>
         </div>
       </div>
-      <p class = "backendtest">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis voluptate quis tenetur quae similique possimus eius mollitia earum natus nesciunt voluptas ab sunt quod eligendi, dolor architecto quidem libero tempora repellat eum iusto hic, ducimus corporis. Doloribus omnis maxime hic aspernatur nemo dicta accusamus esse, a, eum magnam, nihil amet debitis nostrum quidem voluptatibus adipisci assumenda. Quae recusandae, eveniet quidem ipsa quasi illum, deleniti repudiandae aliquid quo illo saepe iusto eum error nostrum laboriosam animi autem iure odit qui rerum ut est, perferendis! Repudiandae facere pariatur nesciunt, debitis maxime quod. Natus, sunt illo quam, neque molestias perspiciatis nam qui rerum!
-      </p>
     </section>
+    <footer>
+      <section class="section section-dark">
+        <div class="row">
+          <div>
+            <span class="label label-primary">Author:  </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-1">
+            <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+          </div>
+          <div class="col-md-1">
+            <a href="https://github.com/hackleman" target="_blank">GitHub</a>
+          </div>
+        </div>
+        </section>
+    </footer>

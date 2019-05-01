@@ -4,7 +4,7 @@ async function get(req, res, next) {
   try {
     const context = {};
 
-      context.time = parseInt(req.query.time, 10);
+      context.hour = parseInt(req.query.hour, 10);
 
 
     const rows = await cost.find(context);
