@@ -1,0 +1,26 @@
+<div class="pimg5-4">
+  <div class = "ptext">
+    <span class = "border1">
+      Average Trips/Hour In Varying Weather Conditions
+    </span>
+   </div>
+  </div>
+
+<section class="section section-dark">
+  <p class = "backendtest">
+    Use this page to analyze average trip times and fares in varying weather conditions.
+    Click one of the buttons to sort results based on temperature windspeed or overall weather
+    condition.
+  <div>
+  <input type="submit" (click) = "Results()" class="btn-1" value="Results"> &nbsp;
+  </div>
+</section>
+
+<section class="section section-white">
+<div id="overlay" #overlay><div id="text">Loading...</div></div>
+    <canvas #lineChart> {{ chart }}
+    </canvas>
+
+</section>
+
+
