@@ -1,6 +1,6 @@
 <div class="pimg5-1">
   <div class = "ptext">
-    <span class = "border">
+    <span class = "border1">
     TIME OF DAY AND AVERAGE FARE
     </span>
    </div>
@@ -9,23 +9,16 @@
     <p>
       An analysis of zones by average total cost.  Select an hour of the day in the drop box below, then click submit to see
       a map of New York City color coded by average fare.  Red represents higher fares and blue lower.</p>
-    </section>
-  <div id = "map" style = "width: 100%; height: 100vh" ></div>
-    <div class = "map-content">
-        <div class = "menu-container">
-            <div class = "menu">
-              Choose a time of day:
-              <select class='select-option' required [(ngModel)]='optionSelected' (ngModelChange)='onOptionsSelected($event)'>
-                <option class='option' *ngFor='let option of options' [value]="option">{{option}}</option>
-              </select>
-
-            </div>
-
-            <div class = "menu" style = "float: right">
-              <button (click)="setColor()" class="btn btn-primary" style = "float: right"> Color My Map! </button>
-            </div>
-        </div>
+      <div class="col-12 justify-content-center">
+        <ngb-timepicker [(ngModel)]="time" [meridian]="meridian"></ngb-timepicker>
       </div>
+      <button (click)="setColor(0)" class="btn-2"> Display Results </button> &nbsp;&nbsp;
+      <button (click)="setColor(1)" class="btn-2"> Display All </button>
+    </section>
+
+  <div id = "map" style = "width: 100%; height: 100vh" ></div>
+  <div id="overlay" #overlay><div id="text">Loading...</div></div>
+
   <footer>
     <section class="section section-dark">
       <div class="row">

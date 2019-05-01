@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { ValidateService } from '../services/validate.service';
 import { DataService } from '../services/data.service';
@@ -13,13 +13,13 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class CostComponent implements OnInit {
 
+  @ViewChild('overlay') el:ElementRef;
   @ViewChild('gmap') gmapElement: any;
   map: google.maps.Map;
   latitude: any;
   longitude: any;
-  options = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
-  optionSelected: any;
-  selection = false;
+  time: any;
+  meridian: any;
 
   constructor(
     private validateService: ValidateService,
@@ -28,6 +28,9 @@ export class CostComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
+
+    this.time = {hour: 13, minute: 30};
+    this.meridian = true;
     this.map = new google.maps.Map(document.getElementById('map'), {
       zoom: 11,
       scrollwheel: false,
@@ -63,16 +66,22 @@ export class CostComponent implements OnInit {
 
   }
 
-  async setColor()  {
+  async setColor(flag: Number)  {
 
         const delay = ms => new Promise(res => setTimeout(res, ms));
-        var hour = this.optionSelected;
+        this.el.nativeElement.style.display='block';
+
+        var hour = this.time['hour'];
+        if (flag) {
+          hour = 0;
+        }
+
         var count = 0;
         var data;
         var maxvalue = 0;
         var minvalue = 0;
         var parcel = this.messageService;
-        this.selection = !this.selection;
+
         this.dataService.getNetCost(hour).subscribe((res:Response) => {
         data = res;
 
@@ -86,15 +95,17 @@ export class CostComponent implements OnInit {
            console.log("waited 1 second");
          }
 
-         for (var i in data) {
-           if (maxvalue < data[i].PRICEPERMILE) {
+         this.el.nativeElement.style.display='none';
 
-             maxvalue = data[i].PRICEPERMILE;
+         for (var i in data) {
+           if (maxvalue < data[i].AVERAGE) {
+
+             maxvalue = data[i].AVERAGE;
            }
          }
          for (var i in data) {
-           if (minvalue > data[i].PRICEPERMILE) {
-             minvalue = data[i].PRICEPERMILE;
+           if (minvalue > data[i].AVERAGE) {
+             minvalue = data[i].AVERAGE;
            }
          }
          console.log(maxvalue);
@@ -114,11 +125,11 @@ export class CostComponent implements OnInit {
              for (var i  in data) {
                if (id === data[i].PICKUPZONE) {
 
-                 console.log(data[i].PRICEPERMILE);
+                 console.log(data[i].AVERAGE);
                     fillcolor: '#FF2AF';
 
-                    if (data[i].PRICEPERMILE < 10 && data[i].PRICEPERMILE > 0) {
-                      x = data[i].PRICEPERMILE * 10;
+                    if (data[i].AVERAGE < 10 && data[i].AVERAGE > 0) {
+                      x = data[i].AVERAGE * 10;
                       x = Math.round(x);
 
                       fillcolor = parcel.getColor(100-x);

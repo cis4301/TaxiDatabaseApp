@@ -520,12 +520,16 @@ body, html{
   background-color: #111111 !important;
   color: white;
   padding:15px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 .btn-2:hover {
   border-color: transparent !important;
   background-color: #111111 !important;
-  color: white;
+  color: yellow;
   padding:15px;
+  padding-left: 30px;
+  padding-right: 30px;
   opacity:.8;
 }
 .border2 {

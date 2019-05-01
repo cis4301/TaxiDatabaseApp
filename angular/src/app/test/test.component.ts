@@ -88,7 +88,7 @@ onZoneSubmit() {
   console.log(this.zone);
 
   this.dataService.getZone(this.zone).subscribe((res:Response) => {
-    this.zonedata1 = res.json();
+    this.zonedata1 = res;
 
     this.location1 = this.zonedata1.ZONEID;
     this.borough1 = this.zonedata1.BOROUGH;
