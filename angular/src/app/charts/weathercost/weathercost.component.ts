@@ -64,14 +64,7 @@ export class WeathercostComponent implements OnInit {
 
 
   ngOnInit() {
-    this.chart = new Chart(this.chartReference.nativeElement, {
-      type: 'line',
-      data: {
-        labels: this.chartLabels,
-        datasets: this.chartData
-      },
-      options: this.chartOptions
-    });
+    this.Condition();
   }
 
   async TempResults() {
@@ -114,6 +107,11 @@ export class WeathercostComponent implements OnInit {
               fontSize: 36
             },
             scales: {
+				yAxes: [{
+					ticks: {
+						beginAtZero: true
+						}
+					}],
               xAxes: [{
                 scaleLabel: {
                   display: true,
@@ -178,7 +176,13 @@ export class WeathercostComponent implements OnInit {
             text: 'Average Fare',
             fontSize: 36
           },
-          scales: {
+          
+            scales: {
+				yAxes: [{
+					ticks: {
+						beginAtZero: true
+						}
+					}],
             xAxes: [{
               scaleLabel: {
                 display: true,
@@ -229,7 +233,8 @@ export class WeathercostComponent implements OnInit {
         { data: newdata,
           label: "Average Cost (dollars per mile)",
           borderColor: '#00AEFF',
-          fill: false}
+		  backgroundColor: '#00AEFF',
+          fill: true}
         ];
 
       this.context = (<HTMLCanvasElement> this.chartReference.nativeElement).getContext('2d');
@@ -241,7 +246,12 @@ export class WeathercostComponent implements OnInit {
             text: 'Average Fare',
             fontSize: 36
           },
-          scales: {
+            scales: {
+				yAxes: [{
+					ticks: {
+						beginAtZero: true
+						}
+					}],
             xAxes: [{
               scaleLabel: {
                 display: true,
@@ -254,7 +264,7 @@ export class WeathercostComponent implements OnInit {
         };
 
       this.chart = new Chart(this.context, {
-        type: 'line',
+        type: 'bar',
         data: {
           labels: newlabels, // your labels array
           datasets: this.chartData2

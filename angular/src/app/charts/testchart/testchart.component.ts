@@ -32,7 +32,14 @@ export class TestchartComponent implements OnInit {
           display: true,
           text: 'Popularity by Month',
           fontSize: 36
-        }
+        },
+		scales: {
+		  yAxes: [{
+			ticks: {
+			  beginAtZero: true
+			}
+		  }]
+		}
       };
 
     chartData = [
@@ -56,14 +63,7 @@ export class TestchartComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-      this.chart = new Chart(this.chartReference.nativeElement, {
-        type: 'line',
-        data: {
-          labels: this.chartLabels,
-          datasets: this.chartData
-        },
-        options: this.chartOptions
-      });
+      
     }
 
 
@@ -88,7 +88,7 @@ export class TestchartComponent implements OnInit {
         this.zonedata = this.messageService.getZoneInfo(this.zone);
         // restructure chart data to 1-dimensional array
         var newdata = this.chartdata.map(function (data) {
-          return data.COUNT
+          return data.COUNT*50
       });
 
         this.olddata = newdata;
@@ -138,7 +138,7 @@ export class TestchartComponent implements OnInit {
               this.zonedata = this.messageService.getZoneInfo(this.zone);
               // restructure chart data to 1-dimensional array
               var newdata = this.chartdata.map(function (data) {
-                return data.COUNT
+                return data.COUNT*50
             });
 
 
