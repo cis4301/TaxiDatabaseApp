@@ -1,6 +1,6 @@
 <div class="pimg5">
   <div class = "ptext">
-    <span class = "border">
+    <span class = "border1">
       TRANSIT TIME BY ZONE
     </span>
    </div>
@@ -8,26 +8,15 @@
   <section class="section section-dark">
     <p>
       Select a zone and see the average trip time from any other zone in the city.  Blue indicates lower trip times and red higher.</p>
-    </section>
+      <input type="submit" (click) = "setStartZone()" class="btn-2" value="Select Zone" > &nbsp;
+      <input type="submit" (click) = "setObjectID()" class="btn-2" value="Display Results"> &nbsp;
+
+  </section>
+
 <div #gmap  style = "width: 100%; height: 100vh"></div>
-<div class = "map-content">
-  <div class = "menu-container">
-      <div class = "menu" style = "float: right">
+<div id="overlay" #overlay><div id="text">Loading...</div></div>
 
-        <div id="info-box" style = "float: right; padding-right: 10px">__</div>
 
-      </div>
-      <div class = "menu" style = "float: left">
-        <button type="button" (click)="setStartZone()" class="btn btn-primary" style="float: left"> Select Zone</button>
-      </div>
-      <div class = "menu" style = "float: right">
-        <button type="button" (click)="setObjectID()" style = "float: right" class="btn btn-primary">Toggle Map</button>
-      </div>
-      <div class = "menu" style = "float: right">
-        <button type="button" (click)="Results()" style = "float: right" class="btn btn-primary">Go To Result!</button>
-      </div>
-  </div>
-</div>
   <footer>
     <section class="section section-dark">
       <div class="row">

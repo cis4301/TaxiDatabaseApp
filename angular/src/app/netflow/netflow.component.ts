@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { ValidateService } from '../services/validate.service';
 import { DataService } from '../services/data.service';
@@ -15,12 +15,15 @@ import { HttpClientModule } from '@angular/common/http';
 export class NetflowComponent implements OnInit {
 
   @ViewChild('gmap') gmapElement: any;
+  @ViewChild('overlay') el:ElementRef;
   map: google.maps.Map;
   latitude: any;
   longitude: any;
   options = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
   optionSelected: any;
   selection = false;
+  time: any;
+  meridian: any;
 
   constructor(
     private validateService: ValidateService,
@@ -30,33 +33,21 @@ export class NetflowComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
+    this.time = {hour: 13, minute: 30};
+    this.meridian = true;
     this.map = new google.maps.Map(document.getElementById('map'), {
       zoom: 11,
+      scrollwheel: false,
+      zoomControl: true,
       center: {lat: 40.710850, lng: -73.897766}
     });
     this.map.data.loadGeoJson('../../assets/convert.json');
-    this.map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push
-    (document.getElementById('legend'));
+
     this.map.data.setStyle({fillColor: '#FFF2AF', strokeWeight: 1});
 
   }
 
   ngAfterContentInit() {
-
-//      var listener1 = this.map.data.addListener('mouseover', function(event) {
-//        if(!this.selection) {
-//          this.map.data.overrideStyle(event.feature, {fillColor: 'D5D8DB', fillOpacity: 1});
-//        }
-//      });
-
-//      var listener2 = this.map.data.addListener('mouseout', function(event) {
-//        if(!this.selection) {
-//            this.map.data.revertStyle();
-//        }
-//      });
-
-
 
       var content;
       var infowindow = new google.maps.InfoWindow();
@@ -94,7 +85,9 @@ export class NetflowComponent implements OnInit {
   async setHour()  {
 
         const delay = ms => new Promise(res => setTimeout(res, ms));
-        var hour = this.optionSelected;
+        this.el.nativeElement.style.display='block';
+        var hour = this.time.hour;
+        console.log(this.time);
         var count = 0;
         var data;
         var maxvalue = 0;
@@ -113,6 +106,7 @@ export class NetflowComponent implements OnInit {
            await delay(1000);
            console.log("waited 1 second");
          }
+         this.el.nativeElement.style.display='none';
 
          for (var i in data) {
            if (maxvalue < data[i].NET) {
@@ -130,8 +124,9 @@ export class NetflowComponent implements OnInit {
 
           var mappers = this.map;
           var x = 0;
-          var tripcolors = [];
-          var objectid = [];
+
+          var negativeColor = ['#726c4e', '#666046', '#59543d', '#4c4834', '#3f3c2b', '#323022', '#26241a', '#191811', '#0c0c08', '#000000']
+          var positiveColors = ['#e5e5ff', '#ccccff', '#b2b2ff', '#9999ff', '#7f7fff', '#6666ff', '#4c4cff', '#3333ff', '#1919ff', '#0202ff']
           mappers.data.setStyle({
             fillColor: '#FFF2AF',
             strokeWeight: 1
@@ -144,22 +139,21 @@ export class NetflowComponent implements OnInit {
 
              for (var i  in data) {
                if (id === data[i].ZONE) {
+
                  if (data[i].NET > 0) {
                    x = data[i].NET/maxvalue * 10;
+                   x = (x > 9) ? 9 : x
                    x = Math.round(x);
 
-                   mappers.data.overrideStyle(feature, {fillColor: 'red', fillOpacity: 1, strokeWeight: 1, strokeColor: 'black', strokeOpacity: 1});
-                 } else if (data[i].NET < 0 || data[i].NET === 0) {
-                   x = data[i].NET/minvalue * -10;
-                   x = Math.round(x);
-
-                   mappers.data.overrideStyle(feature, {fillColor: 'blue', fillOpacity: 1, strokeWeight: 1, strokeColor: 'black', strokeOpacity: 1});
+                   mappers.data.overrideStyle(feature, {fillColor: '#fff2af', strokeWeight: 1, fillOpacity: .9, strokeColor: 'black', strokeOpacity: 1});
                  } else {
-
+                   x = data[i].NET/minvalue * 10;
+                   x = (x > 9) ? 9 : x
+                   x = Math.round(x);
+                   console.log(-x)
+                   mappers.data.overrideStyle(feature, {fillColor: negativeColor[x], strokeWeight: 1, fillOpacity: .9, strokeColor: 'black', strokeOpacity: 1});
                  }
-
                }
-
              }
              });
            }

@@ -11,6 +11,7 @@ export class MessageService {
   stylingData: any;
   zoneData: any;
   zonearray: any;
+  startZone: any;
 
   colors =
   ['#fc0002',
@@ -134,6 +135,14 @@ export class MessageService {
 
   setZone(array) {
     this.zonearray = array;
+  }
+
+  setStartZone(zone) {
+    this.startZone = zone;
+  }
+
+  getStartZone() {
+    return this.startZone;
   }
 
   getZone() {

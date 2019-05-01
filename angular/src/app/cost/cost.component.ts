@@ -30,6 +30,8 @@ export class CostComponent implements OnInit {
   ngOnInit() {
     this.map = new google.maps.Map(document.getElementById('map'), {
       zoom: 11,
+      scrollwheel: false,
+      zoomControl: true,
       center: {lat: 40.710850, lng: -73.897766}
     });
     this.map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push

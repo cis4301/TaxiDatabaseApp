@@ -1,6 +1,6 @@
 <div class="pimg5-2">
   <div class = "ptext">
-    <span class = "border">
+    <span class = "border1">
       NET INFLOW/OUTFLOW
     </span>
    </div>
@@ -8,24 +8,18 @@
   <section class="section section-dark">
     <p>
       A visualization of the net flow into and out of zones by time of day.  Red represents a net outflow while blue represents a net inflow
-    Experiment with different times to observe popularity trends.</p>
-    </section>
+    Experiment with different times to observe popularity trends.
+    </p>
+    <div class="col-12 justify-content-center">
+      <ngb-timepicker [(ngModel)]="time" [meridian]="meridian"></ngb-timepicker>
+      
+    </div>
+
+    <button (click)="setHour()" class="btn-2"> Display Results </button>
+
+  </section>
         <div id = "map" style = "width: 100%; height: 100vh" ></div>
-    <div class = "map-content">
-        <div class = "menu-container">
-            <div class = "menu">
-              Choose a time of day:
-              <select class='select-option' required [(ngModel)]='optionSelected' (ngModelChange)='onOptionsSelected($event)'>
-                <option class='option' *ngFor='let option of options' [value]="option">{{option}}</option>
-              </select>
-
-            </div>
-
-            <div class = "menu" style = "float: right">
-              <button (click)="setHour()" class="btn btn-primary" style = "float: right"> Color My Map! </button>
-            </div>
-        </div>
-        </div>
+        <div id="overlay" #overlay><div id="text">Loading...</div></div>
 
   <footer>
     <section class="section section-dark">

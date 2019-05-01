@@ -485,6 +485,10 @@ body, html{
   border-color: transparent;
 
 }
+.justify-content-center {
+    display: flex !important;
+    justify-content: center !important;
+}
 .border {
   border-color: transparent !important;
   background-color: #111111 !important;
@@ -497,19 +501,7 @@ body, html{
   color: white;
   padding:20px;
 }
-.btn {
-  border-color: transparent !important;
-  background-color: #111111 !important;
-  color: white;
-  padding:10px;
-}
-.btn:hover {
-  border-color: transparent !important;
-  background-color: #111111 !important;
-  color: white;
-  padding:10px;
-  opacity:.8;
-}
+
 .btn-1 {
   border-color: transparent !important;
   background-color: #111111 !important;
@@ -517,6 +509,19 @@ body, html{
   padding:15px;
 }
 .btn-1:hover {
+  border-color: transparent !important;
+  background-color: #111111 !important;
+  color: white;
+  padding:15px;
+  opacity:.8;
+}
+.btn-2 {
+  border-color: transparent !important;
+  background-color: #111111 !important;
+  color: white;
+  padding:15px;
+}
+.btn-2:hover {
   border-color: transparent !important;
   background-color: #111111 !important;
   color: white;

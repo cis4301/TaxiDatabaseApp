@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { MapsComponent } from './maps/maps.component';
@@ -19,6 +20,7 @@ import { TimegraphComponent } from './timegraph/timegraph.component';
 import { ValidateService } from './services/validate.service';
 import { DataService } from './services/data.service';
 import { MessageService } from './services/message.service';
+
 import { MapsindexComponent } from './mapsindex/mapsindex.component';
 import { ChartsindexComponent } from './chartsindex/chartsindex.component';
 import { TestchartComponent } from './charts/testchart/testchart.component';
@@ -69,6 +71,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule,
     ChartsModule,
+    NgbModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [ValidateService, DataService, MessageService],
