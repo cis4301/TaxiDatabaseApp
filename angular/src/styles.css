@@ -69,6 +69,7 @@ body, html{
   background-image:url('./assets/img/image7.jpg');
   min-height:400px;
   cursor: pointer;
+  color:yellow;
   opacity: .85;
 }
 
@@ -76,6 +77,7 @@ body, html{
   background-image:url('./assets/img/image12.jpg');
   min-height:400px;
   cursor: pointer;
+  color:yellow;
   opacity: .85;
 }
 
@@ -159,6 +161,51 @@ body, html{
 }
 .pimg5-5 {
   background-image:url('./assets/img/image13.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: fixed;
+}
+.pimg5-6{
+  background-image:url('./assets/img/image10.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: fixed;
+}
+.pimg5-7 {
+  background-image:url('./assets/img/image13.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: fixed;
+}
+.pimg5-8{
+  background-image:url('./assets/img/image14.jpg');
   min-height:25vh;
   width: 100%;
   position: relative;
@@ -353,6 +400,8 @@ body, html{
   background-attachment: scroll;
 }
 
+
+
 .pimg5index4 {
   background-image:url('./assets/img/image10.jpg');
   min-height:25vh;
@@ -369,7 +418,38 @@ body, html{
     */
   background-attachment: scroll;
 }
-
+.pimg5index5 {
+  background-image:url('./assets/img/image13.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+.pimg5index6 {
+  background-image:url('./assets/img/image14.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
 
 .pimg5index1:hover  {
   background-image:url('./assets/img/image3.jpg');
@@ -424,6 +504,38 @@ body, html{
 
 .pimg5index4:hover {
   background-image:url('./assets/img/image10.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: .9;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+.pimg5index5:hover {
+  background-image:url('./assets/img/image13.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: .9;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+.pimg5index6:hover {
+  background-image:url('./assets/img/image14.jpg');
   min-height:25vh;
   width: 100%;
   position: relative;

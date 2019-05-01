@@ -85,6 +85,27 @@ export class DataService {
     return this.http.get('http://localhost:3000/database/weathergraph/?type=5', {headers: headers})
   }
 
+  getTempMap(temp) {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3000/database/weathermap/?temp=' + temp, {headers: headers})
+
+  }
+
+  getTypeMap(type) {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3000/database/weathermap/?type=' + type, {headers: headers})
+
+  }
+
+  getWindMap(wind) {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3000/database/weathermap/?wind=' + wind, {headers: headers})
+
+  }
+
   getNetCost(hour) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');

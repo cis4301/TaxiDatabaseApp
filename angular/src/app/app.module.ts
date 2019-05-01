@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { Ng5SliderModule } from 'ng5-slider';
 
 import { AppComponent } from './app.component';
 import { MapsComponent } from './maps/maps.component';
@@ -27,6 +28,9 @@ import { TestchartComponent } from './charts/testchart/testchart.component';
 import { ChartsModule } from 'ng2-charts';
 import { WeatherchartComponent } from './charts/weatherchart/weatherchart.component';
 import { WeathercostComponent } from './charts/weathercost/weathercost.component';
+import { WeathermapComponent } from './weathermap/weathermap.component';
+import { WeathertypemapComponent } from './weathertypemap/weathertypemap.component';
+import { WindmapComponent } from './windmap/windmap.component';
 
 
 
@@ -44,7 +48,10 @@ const appRoutes: Routes = [
   {path: 'chartsindex', component: ChartsindexComponent},
   {path: 'testchart', component: TestchartComponent},
   {path: 'weatherchart', component: WeatherchartComponent},
-  {path: 'weathercost', component: WeathercostComponent}
+  {path: 'weathercost', component: WeathercostComponent},
+  {path: 'weathermap', component: WeathermapComponent},
+  {path: 'windmap', component: WindmapComponent},
+  {path: 'weathertype', component: WeathertypemapComponent}
 ]
 
 @NgModule({
@@ -64,7 +71,10 @@ const appRoutes: Routes = [
     ChartsindexComponent,
     TestchartComponent,
     WeatherchartComponent,
-    WeathercostComponent
+    WeathercostComponent,
+    WeathermapComponent,
+    WeathertypemapComponent,
+    WindmapComponent
   ],
   imports: [
     BrowserModule,
@@ -72,8 +82,10 @@ const appRoutes: Routes = [
     HttpClientModule,
     ChartsModule,
     NgbModule,
+    Ng5SliderModule,
     RouterModule.forRoot(appRoutes)
   ],
+  schemas: [],
   providers: [ValidateService, DataService, MessageService],
   bootstrap: [AppComponent]
 })

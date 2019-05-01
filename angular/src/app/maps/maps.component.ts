@@ -104,12 +104,6 @@ export class MapsComponent implements OnInit {
 
   }
 
-  setMapType(mapTypeId: string) {
-    this.map.setMapTypeId(mapTypeId)
-  }
-
-
-
   setCenter() {
     this.map.setCenter(new google.maps.LatLng(this.latitude, this.longitude));
 
@@ -197,11 +191,11 @@ async setObjectID()  {
          // "buckets" from colorCodes
          for (var i  in data) {
            if (id === data[i].ENDZONE) {
+
              x = data[i].TRIPTIME/maxvalue * 100;
              x = Math.round(x);
              mappers.data.overrideStyle(feature, {fillColor: colorCodes[x-1], fillOpacity: 1});
            }
-           count++;
          }
          });
        }

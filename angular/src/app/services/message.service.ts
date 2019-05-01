@@ -12,6 +12,7 @@ export class MessageService {
   zoneData: any;
   zonearray: any;
   startZone: any;
+  data: any;
 
   colors =
   ['#fc0002',
@@ -181,7 +182,16 @@ export class MessageService {
 
   }
 
+  setJSON(data) {
+    this.data = data;
+  }
 
+  getJSON(zone) {
+    if (this.data) {
+        return this.data.find(x => x.ZONE === zone)
+    }
+    return -1
+  }
 
   clearData() {
     this.stylingData = undefined;
