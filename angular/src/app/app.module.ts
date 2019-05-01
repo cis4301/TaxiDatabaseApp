@@ -29,6 +29,10 @@ import { ChartsModule } from 'ng2-charts';
 import { WeatherchartComponent } from './charts/weatherchart/weatherchart.component';
 import { WeathercostComponent } from './charts/weathercost/weathercost.component';
 import { WeathertripavgComponent } from './charts/weathertripavg/weathertripavg.component';
+import { WindmapComponent } from './windmap/windmap.component';
+import { WeathertypemapComponent } from './weathertypemap/weathertypemap.component';
+import { WeathermapComponent } from './weathermap/weathermap.component';
+
 
 
 
@@ -47,13 +51,11 @@ const appRoutes: Routes = [
   {path: 'testchart', component: TestchartComponent},
   {path: 'weatherchart', component: WeatherchartComponent},
   {path: 'weathercost', component: WeathercostComponent},
-<<<<<<< HEAD
   {path: 'weathermap', component: WeathermapComponent},
   {path: 'windmap', component: WindmapComponent},
   {path: 'weathertype', component: WeathertypemapComponent}
-=======
   {path: 'weathertripavg', component: WeathertripavgComponent}
->>>>>>> b2fe150bef3f64a167e378b3be5e3dbac6f0649d
+
 ]
 
 @NgModule({
@@ -74,13 +76,10 @@ const appRoutes: Routes = [
     TestchartComponent,
     WeatherchartComponent,
     WeathercostComponent,
-<<<<<<< HEAD
     WeathermapComponent,
     WeathertypemapComponent,
-    WindmapComponent
-=======
-	WeathertripavgComponent
->>>>>>> b2fe150bef3f64a167e378b3be5e3dbac6f0649d
+    WindmapComponent,
+	  WeathertripavgComponent
   ],
   imports: [
     BrowserModule,
