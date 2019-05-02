@@ -48,12 +48,8 @@ export class WeathercostComponent implements OnInit {
     };
 
   chartData = [
-    { data: [10000, 600, 260, 700, 260, 700, 330, 600, 260, 700, 260, 700], label: 'Zone 1', borderColor: '#00AEFF',
-      fill: false},
-    { data: [120, 455, 100, 340, 100, 340, 120, 455, 100, 340, 100, 340], label: 'Zone 2', borderColor: '#ff0000',
-      fill: false },
-    { data: [45, 67, 800, 500, 800, 500, 45, 67, 800, 500, 800, 500], label: 'Zone 3', borderColor: '#0000FF',
-      fill: false }
+    { data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label: 'Zone 1', borderColor: '#00AEFF',
+      fill: false}
   ];
 
   chartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -69,7 +65,16 @@ export class WeathercostComponent implements OnInit {
 
 
   ngOnInit() {
-    this.Condition();
+    this.context = (<HTMLCanvasElement> this.chartReference.nativeElement).getContext('2d');
+    this.chart = new Chart(this.context, {
+      type: 'bar',
+      data: {
+        labels: this.chartLabels, // your labels array
+        datasets: this.chartData
+      },
+      options: this.chartOptions
+    });
+    this.chart.update();
   }
 
   async TempResults() {
@@ -181,7 +186,7 @@ export class WeathercostComponent implements OnInit {
             text: 'Average Fare',
             fontSize: 36
           },
-          
+
             scales: {
 				yAxes: [{
 					ticks: {

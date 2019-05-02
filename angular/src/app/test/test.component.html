@@ -15,7 +15,8 @@
           <input type="text" [(ngModel)]="id" name="id" class="form-control">
       </div>
       </form>
-    <input type="submit" (click) = "onTestSubmit()" class="btn-2" value="Locate">
+    <input type="submit" (click) = "onTestSubmit()" class="btn-2" value="Enter"> &nbsp;
+    <input type="submit" (click) = "getTotal()" class="btn-2" value="Total">
   <br>
   <br>
   <form (submit)="onZoneSubmit()">
@@ -31,6 +32,19 @@
     Zones range from 1 to 265.  Trips take any value up to 7 million.
     After executing any query basic database stats will be displayed below
     </p>
+    <br>
+    <div class = "ptexttest">
+      <span class = "border1test">
+        Total Number of tuples: {{this.datatotal}}
+      </span>
+     </div>
+     <br>
+     <br>
+     <div class = "ptexttest">
+       <span class = "border1test">
+         Total Number in zone: {{this.zonetotal}}
+       </span>
+      </div>
 </section>
 
 <section class="section section-dark">
