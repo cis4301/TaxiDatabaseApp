@@ -144,13 +144,13 @@ export class NetflowComponent implements OnInit {
                    x = (x > 9) ? 9 : x
                    x = Math.round(x);
 
-                   mappers.data.overrideStyle(feature, {fillColor: positiveColors[x], strokeWeight: 1, fillOpacity: .6, strokeColor: 'black', strokeOpacity: 1});
+                   mappers.data.overrideStyle(feature, {fillColor: positiveColors[x], strokeWeight: 1, fillOpacity: .8, strokeColor: 'black', strokeOpacity: 1});
                  } else {
                    x = data[i].NET/minvalue * 10;
                    x = (x > 9) ? 9 : x
                    x = Math.round(x);
                    console.log(-x)
-                   mappers.data.overrideStyle(feature, {fillColor: negativeColor[x], strokeWeight: 1, fillOpacity: 1, strokeColor: 'black', strokeOpacity: 1});
+                   mappers.data.overrideStyle(feature, {fillColor: negativeColor[x], strokeWeight: 1, fillOpacity: .8, strokeColor: 'black', strokeOpacity: 1});
                  }
                }
              }
