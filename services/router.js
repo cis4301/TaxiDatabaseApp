@@ -2,6 +2,7 @@ const express = require('express');
 const router = new express.Router();
 const yellowtrips = require('../controllers/yellowtrips');
 const zones = require('../controllers/zones');
+const totals = require('../controllers/totals');
 const aggregate = require('../controllers/aggregate');
 const netflow = require('../controllers/netflow');
 const cost = require('../controllers/cost');
@@ -36,6 +37,9 @@ router.route('/weathertripavg/')
 
 router.route('/weathermap/')
   .get(weathermap.get);
+
+router.route('/totals/')
+  .get(totals.get);
 
 
 module.exports = router;

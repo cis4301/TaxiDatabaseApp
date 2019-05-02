@@ -29,6 +29,12 @@ export class DataService {
 
     }
 
+  getZoneTotal(zone) {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3000/database/totals/?total=' + zone, {headers: headers})
+  }
+
   getTripTimes(zone) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');

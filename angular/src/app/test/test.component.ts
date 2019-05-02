@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 export class TestComponent implements OnInit {
   id: Number;
   zone: Number;
+  zonetotal: any;
+  datatotal: any;
 
   tripdata: any;
   distance: any;
@@ -81,7 +83,7 @@ export class TestComponent implements OnInit {
     });
   }
 
-onZoneSubmit() {
+  onZoneSubmit() {
   var zonenumber = {
     zone: this.zone
   }
@@ -94,9 +96,26 @@ onZoneSubmit() {
     this.borough1 = this.zonedata1.BOROUGH;
     this.zonename1 = this.zonedata1.ZONENAME;
     this.yellowexclusive1 = this.zonedata1.YELLOWEXCLUSIVE;
-    console.log(this.zonedata1);
+
   });
+  this.getTotalperZone();
+
 }
+
+  getTotalperZone() {
+
+    this.dataService.getZoneTotal(this.zone).subscribe((res:Response) => {
+      var temp = res;
+      this.zonetotal = temp[0]['TOTAL'];
+    });
+  }
+
+  getTotal() {
+    this.dataService.getZoneTotal(0).subscribe((res:Response) => {
+      var temp = res;
+      this.datatotal = temp[0]['TOTAL'];
+    });
+  }
 
 
 }

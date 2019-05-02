@@ -595,6 +595,18 @@ body, html{
   letter-spacing:8px;
   text-transform:uppercase;
   border-color: transparent;
+}
+
+.ptexttest {
+
+    top:50%;
+    width:100%;
+    text-align:center;
+    color:#000;
+    font-size:27px;
+    letter-spacing:8px;
+    text-transform:uppercase;
+    border-color: transparent;
 
 }
 .justify-content-center {
@@ -608,6 +620,13 @@ body, html{
   padding:20px;
 }
 .border1 {
+  border-color: transparent !important;
+  background-color: #111111 !important;
+  color: white;
+  padding:20px;
+}
+
+.border1test {
   border-color: transparent !important;
   background-color: #111111 !important;
   color: white;
