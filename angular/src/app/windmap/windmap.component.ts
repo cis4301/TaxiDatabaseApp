@@ -27,7 +27,7 @@ export class WindmapComponent implements OnInit {
   aggregateData: any;
   wind: number = 10;
   options: Options = {
-    floor: 0,
+    floor: 2,
     ceil: 27,
     step: 1
   };

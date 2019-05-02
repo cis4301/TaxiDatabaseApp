@@ -88,7 +88,7 @@ export class DataService {
   getTempMap(temp) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:3000/database/weathermap/?temp=' + temp, {headers: headers})
+    return this.http.get('http://localhost:3000/database/weathermap/?temperature=' + temp, {headers: headers})
 
   }
 
@@ -102,7 +102,7 @@ export class DataService {
   getWindMap(wind) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:3000/database/weathermap/?wind=' + wind, {headers: headers})
+    return this.http.get('http://localhost:3000/database/weathermap/?windspeed=' + wind, {headers: headers})
 
   }
 
@@ -119,7 +119,7 @@ export class DataService {
     headers.append('Content-Type', 'application/json');
     return this.http.get('http://localhost:3000/database/aggregate/?zone1=' + zonenumber + '&trip=' + trip, {headers: headers})
   }
-  
+
   getweathertripavg() {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
