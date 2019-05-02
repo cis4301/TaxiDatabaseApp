@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "",
+  "author": "Jason Hackleman",
   "license": "ISC",
   "dependencies": {
     "cisco-vpn": "^1.0.2",
@@ -16,7 +16,11 @@
     "express": "^4.16.4",
     "ip": "^1.1.5",
     "morgan": "^1.9.1",
-    "oracledb": "^3.1.2"
+    "oracledb": "^3.1.2",
+    "bcryptjs": "*",
+    "jsonwebtoken": "*",
+    "passport": "*",
+    "passport-jwt": "*"
   },
   "devDependencies": {
     "grunt": "^1.0.4",

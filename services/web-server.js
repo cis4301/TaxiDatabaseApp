@@ -1,4 +1,5 @@
 const http = require('http');
+const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
@@ -10,15 +11,24 @@ const database = require('./database.js');
 let httpServer;
 
 function initialize() {
+
   return new Promise((resolve, reject) => {
+
     const app = express();
+
     httpServer = http.createServer(app);
 
     app.use(morgan('combined'));
 
+    // CORS MiddleWare
     app.use(cors());
 
+    // Set Static Folder
+    app.use(express.static(path.join(__dirname, '../angular')));
+
+    // Default Database Startup message after Get '/'
     app.get('/', async (req, res) => {
+
       const result = await database.simpleExecute('select user, systimestamp from dual');
       const user = result.rows[0].USER;
       const date = result.rows[0].SYSTIMESTAMP;
@@ -39,6 +49,7 @@ function initialize() {
 }
 
 function close() {
+
   return new Promise((resolve, reject) => {
     httpServer.close((err) => {
       if (err) {

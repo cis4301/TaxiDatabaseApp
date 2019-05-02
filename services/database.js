@@ -19,7 +19,7 @@ async function initialize()
 
   await oracledb.createPool(dbConfig.CISEPool);
 
-  console.log("Oracle DB Connected~!!!");
+  console.log("Oracle DB Connection Success");
 }
 
 async function close()

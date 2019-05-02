@@ -1,17 +1,26 @@
 const express = require('express');
 const router = new express.Router();
-const yellowtrips = require('../controllers/yellowtrips');
-const zones = require('../controllers/zones');
-const totals = require('../controllers/totals');
-const aggregate = require('../controllers/aggregate');
-const netflow = require('../controllers/netflow');
-const cost = require('../controllers/cost');
-const timegraph = require('../controllers/timegraph');
-const weathergraph = require('../controllers/weathergraph');
-const weathertripavg = require('../controllers/weathertripavg');
-const weathermap = require('../controllers/weathermap');
-const netflowchart = require('../controllers/netflowchart');
 
+// Bring in Query controllers
+const yellowtrips = require('../controllers/query/yellowtrips');
+const zones = require('../controllers/query/zones');
+const totals = require('../controllers/query/totals');
+const aggregate = require('../controllers/query/aggregate');
+const netflow = require('../controllers/query/netflow');
+const cost = require('../controllers/query/cost');
+const timegraph = require('../controllers/query/timegraph');
+const weathergraph = require('../controllers/query/weathergraph');
+const weathertripavg = require('../controllers/query/weathertripavg');
+const weathermap = require('../controllers/query/weathermap');
+const netflowchart = require('../controllers/query/netflowchart');
+
+// Bring in Auth controllers
+const register = require('../controllers/auth/register');
+const authenticate = require('../controllers/auth/authenticate');
+const profile = require('../controllers/auth/profile');
+const validate = require('../controllers/auth/validate');
+
+// Query controllers
 router.route('/yellowtrips/:id?')
   .get(yellowtrips.get);
 
@@ -38,12 +47,27 @@ router.route('/weathertripavg/')
 
 router.route('/weathermap/')
   .get(weathermap.get);
-  
+
 router.route('/netflowchart/')
   .get(netflowchart.get);
 
 router.route('/totals/')
   .get(totals.get);
+
+//Authentication controllers
+
+router.route('/register')
+  .get(register.get);
+
+router.route('/authenticate')
+  .get(authenticate.get);
+
+router.route('/profile')
+  .get(profile.get);
+
+router.route('/validate')
+  .get(validate.get);
+
 
 
 module.exports = router;
