@@ -56,10 +56,10 @@ export class NetflowComponent implements OnInit {
         console.log(content);
         infowindow.setContent(
           '<div id="content">'+
-                '<h3>'+ content[1] + '</h3>' +
+                '<h3>'+ content[2] + '</h3>' +
                 '<div id="bodyContent">'+
-                '<pre> &#10;&#13; Borough:' + content[0] + '&#10;&#13; Neighborhood:' + content[2] + ' &#10;&#13; Type:' + content[3] + '</pre>' +
-
+                '<h4> &#10;&#13; Borough:' + content[1] + '<br>&#10;&#13; Zone ID:' + content[0] + ' <br>&#10;&#13; Type:' + content[3] + '<br></h>' +
+				'<a href="http://localhost:4200/netflowchart?zone=' + content[0] + '">Hourly Average Net Flow into Zone</a>'+
                 '</div>'+
                 '</div>'
           );

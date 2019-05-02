@@ -32,6 +32,7 @@ import { WeathertripavgComponent } from './charts/weathertripavg/weathertripavg.
 import { WindmapComponent } from './windmap/windmap.component';
 import { WeathertypemapComponent } from './weathertypemap/weathertypemap.component';
 import { WeathermapComponent } from './weathermap/weathermap.component';
+import { NetflowchartComponent } from './charts/netflowchart/netflowchart.component';
 
 
 
@@ -54,7 +55,8 @@ const appRoutes: Routes = [
   {path: 'weathermap', component: WeathermapComponent},
   {path: 'windmap', component: WindmapComponent},
   {path: 'weathertype', component: WeathertypemapComponent},
-  {path: 'weathertripavg', component: WeathertripavgComponent}
+  {path: 'weathertripavg', component: WeathertripavgComponent},
+  {path: 'netflowchart', component: NetflowchartComponent}
 
 ]
 
@@ -79,7 +81,8 @@ const appRoutes: Routes = [
     WeathermapComponent,
     WeathertypemapComponent,
     WindmapComponent,
-	  WeathertripavgComponent
+	  WeathertripavgComponent,
+	  NetflowchartComponent
   ],
   imports: [
     BrowserModule,

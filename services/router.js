@@ -9,6 +9,7 @@ const timegraph = require('../controllers/timegraph');
 const weathergraph = require('../controllers/weathergraph');
 const weathertripavg = require('../controllers/weathertripavg');
 const weathermap = require('../controllers/weathermap');
+const netflowchart = require('../controllers/netflowchart');
 
 router.route('/yellowtrips/:id?')
   .get(yellowtrips.get);
@@ -36,6 +37,9 @@ router.route('/weathertripavg/')
 
 router.route('/weathermap/')
   .get(weathermap.get);
+  
+router.route('/netflowchart/')
+  .get(netflowchart.get);
 
 
 module.exports = router;

@@ -125,4 +125,10 @@ export class DataService {
     headers.append('Content-Type', 'application/json');
     return this.http.get('http://localhost:3000/database/weathertripavg', {headers: headers})
   }
+  
+  getnetflowchart(zone) {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3000/database/netflowchart/?zone=' + zone, {headers: headers})
+  }
 }
