@@ -30,7 +30,7 @@ export class NetflowComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.time = {hour: 13, minute: 30};
+    this.time = {hour: 19, minute: 30};
     this.meridian = true;
     this.map = new google.maps.Map(document.getElementById('map'), {
       zoom: 11,
@@ -41,7 +41,9 @@ export class NetflowComponent implements OnInit {
     this.map.data.loadGeoJson('../../assets/convert.json');
 
     this.map.data.setStyle({fillColor: '#FFF2AF', strokeWeight: 1});
-
+	
+	this.setHour();
+	
   }
 
   ngAfterContentInit() {
@@ -122,8 +124,8 @@ export class NetflowComponent implements OnInit {
           var mappers = this.map;
           var x = 0;
 
-          var negativeColor = ['#726c4e', '#666046', '#59543d', '#4c4834', '#3f3c2b', '#323022', '#26241a', '#191811', '#0c0c08', '#000000']
-          var positiveColors = ['#e5e5ff', '#ccccff', '#b2b2ff', '#9999ff', '#7f7fff', '#6666ff', '#4c4cff', '#3333ff', '#1919ff', '#0202ff']
+          var negativeColor = ['#fff0e6', '#ffe0cc', '#ffd1b3', '#ffc299', '#ffb380', '#ffa366', '#ff944d', '#ff8533', '#ff751a', '#ff6600']
+          var positiveColors = ['#e6e6ff', '#ccccff', '#b3b3ff', '#9999ff', '#8080ff', '#6666ff', '#4d4dff', '#3333ff', '#1a1aff', '#0202ff']
           mappers.data.setStyle({
             fillColor: '#FFF2AF',
             strokeWeight: 1
@@ -142,7 +144,7 @@ export class NetflowComponent implements OnInit {
                    x = (x > 9) ? 9 : x
                    x = Math.round(x);
 
-                   mappers.data.overrideStyle(feature, {fillColor: '#fff2af', strokeWeight: 1, fillOpacity: .6, strokeColor: 'black', strokeOpacity: 1});
+                   mappers.data.overrideStyle(feature, {fillColor: positiveColors[x], strokeWeight: 1, fillOpacity: .6, strokeColor: 'black', strokeOpacity: 1});
                  } else {
                    x = data[i].NET/minvalue * 10;
                    x = (x > 9) ? 9 : x
