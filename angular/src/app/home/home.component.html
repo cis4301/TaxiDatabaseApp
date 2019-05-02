@@ -15,7 +15,7 @@
 
      <!-- Headings -->
 
-      <section class="section section-light">
+      <section class="section section-dark">
         <h2> NYC TLC Data Set  </h2>
         <p>
         The recent dump of trip data from the NYC Taxi and Limosuine Commission has given us an unprecedented source of
@@ -27,7 +27,7 @@
         </p>
         </section>
 
-        <div  [routerLink]="['/mapsindex']" class="pimg2">
+        <div  [routerLink]="['maps']" class="pimg2">
           <div  class = "ptext">
             <span class = "border">
               Map-based Visualizations
@@ -35,7 +35,7 @@
            </div>
           </div>
 
-          <section class="section section-dark">
+          <section class="section section-light">
             <h2> Google Maps </h2>
             <p>
             New York City is officially divided into 256 distinct zones, covering all of its major boroughs and neighborhoods.
@@ -44,7 +44,7 @@
            let you see a top-level overview of the data.  This makes trends easily observable.  Click on the heading above to start a map-based query. </p>
             </section>
 
-            <div   [routerLink]="['/chartsindex']" class="pimg3">
+            <div   [routerLink]="['charts']" class="pimg3">
               <div  class = "ptext">
                 <span class = "border">
                   Charts
@@ -52,7 +52,7 @@
                </div>
               </div>
 
-              <section class="section section-dark">
+              <section class="section section-light">
                 <h2> Charts </h2>
                 <p>
                   Charts allow visualizations of trends that may not vary much between zones, or allow for queries from the maps to be analyzed with
