@@ -13,9 +13,9 @@ async function find(context) {
 
     binds.hour = context.hour;
   //  binds.type = context.type;
-    query += ', QUERY2 AS (SELECT COUNT(tripID) AS inflow, pickupzone FROM QUERY1 WHERE (EXTRACT(hour from starttime)= :hour) GROUP BY pickupzone)';
-    query += ', QUERY3 AS (SELECT COUNT(tripID) AS outflow, endzone FROM QUERY1 WHERE (EXTRACT(hour from endtime)= :hour) GROUP BY endzone)';
-    query += ' SELECT (QUERY2.inflow - QUERY3.outflow) AS net, pickupzone AS zone FROM QUERY2, QUERY3 WHERE QUERY2.pickupzone = QUERY3.endzone';
+    query += ', QUERY2 AS (SELECT COUNT(tripID) AS outflow, pickupzone FROM QUERY1 WHERE (EXTRACT(hour from starttime)= :hour) GROUP BY pickupzone)';
+    query += ', QUERY3 AS (SELECT COUNT(tripID) AS inflow, endzone FROM QUERY1 WHERE (EXTRACT(hour from endtime)= :hour) GROUP BY endzone)';
+    query += ' SELECT (QUERY3.inflow - QUERY2.outflow) AS net, pickupzone AS zone FROM QUERY2, QUERY3 WHERE QUERY2.pickupzone = QUERY3.endzone';
 
   }
 
