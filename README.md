@@ -30,6 +30,7 @@ to install all your dependencies, then
 
     grunt
 
+
 to start the server on localhost:3000.
 
 To run the app, navigate to 
@@ -41,6 +42,7 @@ then,
     ng serve
 
 to run app on localhost:4200.
+
 
 ## Python
 
