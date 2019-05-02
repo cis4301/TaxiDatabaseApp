@@ -43,6 +43,8 @@ export class NetflowchartComponent implements OnInit {
 		},
 		legend:{display: true,labels:{fontSize:24}}
       };
+	  
+	 chartData2: any;
 
 
 
