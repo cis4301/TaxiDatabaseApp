@@ -30,6 +30,11 @@ export class WeatherchartComponent implements OnInit {
         fontSize: 36
       },
       scales: {
+		  yAxes: [{
+				  ticks: {
+					beginAtZero: true
+				  }
+				}],
         xAxes: [{
           scaleLabel: {
             display: true,

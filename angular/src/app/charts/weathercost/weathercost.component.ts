@@ -31,6 +31,11 @@ export class WeathercostComponent implements OnInit {
         fontSize: 36
       },
       scales: {
+		  yAxes: [{
+				  ticks: {
+					beginAtZero: true
+				  }
+				}],
         xAxes: [{
           scaleLabel: {
             display: true,

@@ -53,7 +53,7 @@ const appRoutes: Routes = [
   {path: 'weathercost', component: WeathercostComponent},
   {path: 'weathermap', component: WeathermapComponent},
   {path: 'windmap', component: WindmapComponent},
-  {path: 'weathertype', component: WeathertypemapComponent}
+  {path: 'weathertype', component: WeathertypemapComponent},
   {path: 'weathertripavg', component: WeathertripavgComponent}
 
 ]
