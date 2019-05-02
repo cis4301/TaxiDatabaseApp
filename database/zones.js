@@ -1,7 +1,7 @@
 const database = require('../services/database.js');
 
 const baseQuery =
-'SELECT * from zones';
+'SELECT * from CHASTAIN.GEOZONE';
 
 
 async function find(context) {
@@ -11,9 +11,9 @@ async function find(context) {
   if (context.id) {
     binds.locationID = context.id;
 
-    query += '\nwhere LOCATIONID = :locationID';
+    query += '\nwhere ZONEID = :locationID';
   }
-
+console.log(query);
   const result = await database.simpleExecute(query, binds);
 
   return result.rows;

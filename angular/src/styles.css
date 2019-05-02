@@ -1,0 +1,676 @@
+/* You can add global styles to this file, and also import other style files */
+
+.chart-container {
+
+  width: 90%;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  height: 50vh;
+
+}
+
+.testchart-footer {
+  clear: both;
+  position: relative;
+  height: 40px;
+  margin-top: -40px;
+  bottom:0
+}
+body, html{
+  height: 100%;
+  margin:0;
+  font-size:16px;
+  font-family: "Lato", sans-serif;
+  font-weight:400;
+  line-height:1.8em;
+  color:#666;
+  width: 100%;
+}
+.container {
+  height: 100%;
+  margin:0;
+  font-size:16px;
+  font-family: "Lato", sans-serif;
+  font-weight:400;
+  line-height:1.8em;
+  color:#666;
+  width: 125%;
+}
+
+.pimg1, .pimg2, .pimg3{
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: fixed;
+}
+.pimg1{
+  background-image:url('./assets/img/image1.jpg');
+  min-height:100vh;
+  width: 100%;
+
+}
+.pimg2{
+  background-image:url('./assets/img/image7.jpg');
+  min-height:400px;
+  cursor: pointer;
+}
+
+.pimg3{
+  background-image:url('./assets/img/image12.jpg');
+  min-height:400px;
+  cursor: pointer;
+}
+.pimg2:hover{
+  background-image:url('./assets/img/image7.jpg');
+  min-height:400px;
+  cursor: pointer;
+  color:yellow;
+  opacity: .85;
+}
+
+.pimg3:hover {
+  background-image:url('./assets/img/image12.jpg');
+  min-height:400px;
+  cursor: pointer;
+  color:yellow;
+  opacity: .85;
+}
+
+.pimg5 {
+  background-image:url('./assets/img/image5.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: fixed;
+}
+
+.pimg5-1 {
+  background-image:url('./assets/img/image4.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: fixed;
+}
+
+.pimg5-2 {
+  background-image:url('./assets/img/image8.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: fixed;
+}
+
+.pimg5-3 {
+  background-image:url('./assets/img/image9.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: fixed;
+}
+.pimg5-4 {
+  background-image:url('./assets/img/image10.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: fixed;
+}
+.pimg5-5 {
+  background-image:url('./assets/img/image13.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: fixed;
+}
+.pimg5-6{
+  background-image:url('./assets/img/image10.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: fixed;
+}
+.pimg5-7 {
+  background-image:url('./assets/img/image13.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: fixed;
+}
+.pimg5-8{
+  background-image:url('./assets/img/image14.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: fixed;
+}
+.pimg4index {
+  background-image:url('./assets/img/image12.jpg');
+  min-height:35vh;
+  width: 100%;
+  position: relative;
+  opacity: ;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: fixed;
+}
+
+.pimg4index1 {
+  background-image:url('./assets/img/image2.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+.pimg4index1:hover {
+  background-image:url('./assets/img/image2.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: .8;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+.pimg4index2  {
+  background-image:url('./assets/img/image10.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+.pimg4index2:hover  {
+  background-image:url('./assets/img/image10.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: .8;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+
+.pimg4index3  {
+  background-image:url('./assets/img/image13.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+.pimg4index3:hover  {
+  background-image:url('./assets/img/image13.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: .8;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+
+.pimg5index {
+  background-image:url('./assets/img/image7.jpg');
+  min-height:35vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: fixed;
+}
+
+.pimg5index1 {
+  background-image:url('./assets/img/image3.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+
+.pimg5index2 {
+  background-image:url('./assets/img/image11.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+
+.pimg5index3 {
+  background-image:url('./assets/img/image5.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+
+
+
+.pimg5index4 {
+  background-image:url('./assets/img/image10.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+.pimg5index5 {
+  background-image:url('./assets/img/image13.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+.pimg5index6 {
+  background-image:url('./assets/img/image14.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+
+.pimg5index1:hover  {
+  background-image:url('./assets/img/image3.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: .9;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+
+.pimg5index2:hover  {
+  background-image:url('./assets/img/image11.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: .9;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+
+.pimg5index3:hover  {
+  background-image:url('./assets/img/image5.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: .9;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+
+.pimg5index4:hover {
+  background-image:url('./assets/img/image10.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: .9;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+.pimg5index5:hover {
+  background-image:url('./assets/img/image13.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: .9;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+.pimg5index6:hover {
+  background-image:url('./assets/img/image14.jpg');
+  min-height:25vh;
+  width: 100%;
+  position: relative;
+  opacity: .9;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+.pimg1-2 {
+  background-image:url('./assets/img/image1.jpg');
+  min-height:100vh;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = Parallax
+    scroll = normal
+    */
+  background-attachment: scroll;
+}
+
+.section{
+  text-align: center;
+  padding: 50px 80px;
+}
+
+.section-light{
+  background-color: #CFD0D1;
+  color: #4A4A4A !important;
+}
+.section-white{
+  background-color: white;
+  color: #4A4A4A !important;
+}
+
+.section-dark{
+  background-color: #282e34;
+  color:#ddd !important;
+}
+
+.ptext {
+  position: absolute;
+  top:50%;
+  width:100%;
+  text-align:center;
+  color:#000;
+  font-size:27px;
+  letter-spacing:8px;
+  text-transform:uppercase;
+  border-color: transparent;
+}
+
+.ptexttest {
+
+    top:50%;
+    width:100%;
+    text-align:center;
+    color:#000;
+    font-size:27px;
+    letter-spacing:8px;
+    text-transform:uppercase;
+    border-color: transparent;
+
+}
+.justify-content-center {
+    display: flex !important;
+    justify-content: center !important;
+}
+.border {
+  border-color: transparent !important;
+  background-color: #111111 !important;
+  color: yellow;
+  padding:20px;
+}
+.border1 {
+  border-color: transparent !important;
+  background-color: #111111 !important;
+  color: white;
+  padding:20px;
+}
+
+.border1test {
+  border-color: transparent !important;
+  background-color: #111111 !important;
+  color: white;
+  padding:20px;
+}
+
+.btn-1 {
+  border-color: transparent !important;
+  background-color: #111111 !important;
+  color: yellow;
+  padding:15px;
+}
+.btn-1:hover {
+  border-color: transparent !important;
+  background-color: #111111 !important;
+  color: white;
+  padding:15px;
+  opacity:.8;
+}
+.btn-2 {
+  border-color: transparent !important;
+  background-color: #111111 !important;
+  color: white;
+  padding:15px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.btn-2:hover {
+  border-color: transparent !important;
+  background-color: #111111 !important;
+  color: yellow;
+  padding:15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  opacity:.8;
+}
+.border2 {
+  border-color: transparent !important;
+  background-color: #111111 !important;
+  color: white;
+  padding:20px;
+}
+
+
+.ptext .border .trans{
+  background-color: transparent
+}

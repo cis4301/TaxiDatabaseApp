@@ -1,0 +1,121 @@
+
+  <div class="pimg5-3">
+    <div class = "ptext">
+      <span class = "border1">
+        Back End Test Page
+      </span>
+     </div>
+    </div>
+<section class="section section-light">
+
+      <br>
+      <form>
+      <div class="form-group">
+          <label>Trip Number:</label>
+          <input type="text" [(ngModel)]="id" name="id" class="form-control">
+      </div>
+      </form>
+    <input type="submit" (click) = "onTestSubmit()" class="btn-2" value="Enter"> &nbsp;
+    <input type="submit" (click) = "getTotal()" class="btn-2" value="Total">
+  <br>
+  <br>
+  <form (submit)="onZoneSubmit()">
+    <div class="form-group">
+      <label>Zone Number:</label>
+      <input type="text" [(ngModel)]="zone" name="zone" class="form-control">
+    </div>
+  </form>
+  <input type="submit" (click) = "onZoneSubmit()" class="btn-2" value="Locate">
+
+  <p class = "backendtest">
+    Use this form field to get data for a specific zone or trip.
+    Zones range from 1 to 265.  Trips take any value up to 7 million.
+    After executing any query basic database stats will be displayed below
+    </p>
+    <br>
+    <div class = "ptexttest">
+      <span class = "border1test">
+        Total Number of tuples: {{this.datatotal}}
+      </span>
+     </div>
+     <br>
+     <br>
+     <div class = "ptexttest">
+       <span class = "border1test">
+         Total Number in zone: {{this.zonetotal}}
+       </span>
+      </div>
+</section>
+
+<section class="section section-dark">
+  <h3> Trip Data:  {{id}} </h3>
+    <br>
+  <div class="col-lg-4">
+  <div class="bs-component">
+  <ul>
+    <br>
+  <p> Trip Distance: {{ this.distance }} </p>
+  <p> Total Amount:  {{ this.amount  }} </p>
+  <p> Passenger Count: {{ this.passengers }} </p>
+  <p> Pickup Zone: {{ this.pickupzone }} </p>
+  <p> Dropoff Zone: {{ this.dropoffzone }} </p>
+
+
+  </ul>
+      <br>
+    </div>
+  </div>
+
+</section>
+
+    <section class="section section-light">
+
+      <h3> Zone data:</h3>
+        <br>
+      <div class="col-lg-4">
+      <div class="bs-component">
+        <ul>
+          <br>
+        <p> Zone Number: {{ this.location1 }} </p>
+        <p> Name of Borough:  {{ this.borough1  }}</p>
+        <p> Zone Name: {{ this.zonename1 }} </p>
+        <p> Yellow Exclusive:  {{ this.yellowexclusive1  }} </p>
+        </ul>
+
+        </div>
+      </div>
+
+        <br>
+      <div class="col-lg-4">
+      <div class="bs-component">
+        <ul>
+          <br>
+        <p> Zone Number: {{ this.location2 }} </p>
+        <p> Name of Borough:  {{ this.borough2  }} </p>
+        <p> Zone Name: {{ this.zonename2 }} </p>
+        <p> Yellow Exclusive:  {{ this.yellowexclusive2  }} </p>
+        </ul>
+        <br>
+        <br>
+          <p> Data Obtained (JSON):{{ this.zonedata1 | json }} </p>
+          <p> Data Obtained (JSON):{{ this.tripdata2 | json }} </p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <section class="section section-dark">
+        <div class="row">
+          <div>
+            <span class="label label-primary">Author:  </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-1">
+            <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+          </div>
+          <div class="col-md-1">
+            <a href="https://github.com/hackleman" target="_blank">GitHub</a>
+          </div>
+        </div>
+        </section>
+    </footer>
