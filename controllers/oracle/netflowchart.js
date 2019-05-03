@@ -1,4 +1,4 @@
-const netflowchart = require('../../database/query/netflowchart.js');
+const netflowchart = require('../../database/oracle/netflowchart.js');
 
 async function get(req, res, next) {
   try {

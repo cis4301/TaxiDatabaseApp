@@ -6,7 +6,7 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('../config/database');
 const port = require('../config/server');
-const users = require('./router/users');
+const users = require('../routes/users');
 const database = require('./database');
 
 

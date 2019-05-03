@@ -4,6 +4,12 @@ const oracledb = require('oracledb');
 const iphandle = require('ip');
 const vpn = require('cisco-vpn')(server.VPN);
 
+/*
+    Initialize and execute functions
+    for the Oracle database server.
+    Also connects to Cisco VPN upon initialization
+*/
+
 async function initialize(){
 /*
   Checks to see if VPN connection is already established
@@ -20,7 +26,6 @@ async function initialize(){
 
   console.log("Oracle DB Connection Success");
 }
-
 /*
   Closes the Oracle connection pool
  */

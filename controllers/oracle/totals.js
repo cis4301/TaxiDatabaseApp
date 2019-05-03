@@ -1,4 +1,4 @@
-const totals = require('../../database/query/totals.js');
+const totals = require('../../database/oracle/totals.js');
 
 async function get(req, res, next) {
   try {

@@ -4,7 +4,7 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const config = require('../config/database');
-const router = require('./router/routes');
+const router = require('../routes/oracle');
 const port = require('../config/server');
 
 const database = require('./database.js');

@@ -1,9 +1,13 @@
-const weathertripavg = require('../../database/query/weathertripavg.js');
+const timegraph = require('../../database/oracle/timegraph.js');
 
 async function get(req, res, next) {
   try {
+    const context = {};
 
-    const rows = await weathertripavg.find();
+      context.timezone = parseInt(req.query.timezone, 10);
+
+
+    const rows = await timegraph.find(context);
 
     if (req.query) {
 

@@ -1,5 +1,7 @@
 module.exports = {
+
   CISEPool: {
+
     user: process.env.CISE_USER,
     password: process.env.CISE_PASSWORD,
 //    connectString: "localhost/orcl",
@@ -9,6 +11,7 @@ module.exports = {
     poolIncrement: 0
   },
   Mongoose: {
+
     database: process.env.MONGO_URI,
     secret: 'secret'
   }

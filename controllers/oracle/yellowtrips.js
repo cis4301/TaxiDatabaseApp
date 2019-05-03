@@ -1,4 +1,4 @@
-const zones = require('../../database/query/zones.js');
+const yellowtrips = require('../../database/oracle/yellowtrips.js');
 
 async function get(req, res, next) {
   try {
@@ -6,7 +6,7 @@ async function get(req, res, next) {
 
     context.id = parseInt(req.params.id, 10);
 
-    const rows = await zones.find(context);
+    const rows = await yellowtrips.find(context);
 
     if (req.params.id) {
       if (rows.length === 1) {

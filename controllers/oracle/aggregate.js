@@ -1,15 +1,15 @@
-const aggregate = require('../../database/query/netflow.js');
+const aggregate = require('../../database/oracle/aggregate.js');
 
 async function get(req, res, next) {
   try {
     const context = {};
       console.log(req.query);
-      context.hour = parseInt(req.query.hour, 10);
-
+    context.zone1 = parseInt(req.query.zone1, 10);
+    context.trip = parseInt(req.query.trip, 10);
 
     const rows = await aggregate.find(context);
 
-    if (req.query) {
+    if (req.query.zone1) {
 
         res.status(200).json(rows);
 

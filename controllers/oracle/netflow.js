@@ -1,13 +1,13 @@
-const cost = require('../../database/query/cost.js');
+const aggregate = require('../../database/oracle/netflow.js');
 
 async function get(req, res, next) {
   try {
     const context = {};
-
+      console.log(req.query);
       context.hour = parseInt(req.query.hour, 10);
 
 
-    const rows = await cost.find(context);
+    const rows = await aggregate.find(context);
 
     if (req.query) {
 

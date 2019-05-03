@@ -1,4 +1,4 @@
-const weathermap = require('../../database/query/weathermap.js');
+const weathermap = require('../../database/oracle/weathermap.js');
 
 async function get(req, res, next) {
   try {

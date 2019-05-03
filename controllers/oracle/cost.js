@@ -1,13 +1,13 @@
-const timegraph = require('../../database/query/timegraph.js');
+const cost = require('../../database/oracle/cost.js');
 
 async function get(req, res, next) {
   try {
     const context = {};
+oracle
+      context.hour = parseInt(req.query.hour, 10);
 
-      context.timezone = parseInt(req.query.timezone, 10);
 
-
-    const rows = await timegraph.find(context);
+    const rows = await cost.find(context);
 
     if (req.query) {
 
