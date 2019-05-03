@@ -3,8 +3,9 @@ const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
-const webServerConfig = require('../config/web-server.js');
-const router = require('./router.js');
+const config = require('../config/database');
+const router = require('./router/routes');
+const port = require('../config/server');
 
 const database = require('./database.js');
 
@@ -16,8 +17,10 @@ function initialize() {
 
     const app = express();
 
+    // set up server with http module
     httpServer = http.createServer(app);
 
+    // morgan for console debugging
     app.use(morgan('combined'));
 
     // CORS MiddleWare
@@ -35,11 +38,13 @@ function initialize() {
 
       res.end(`DB user: ${user}\nDate: ${date}`);
     });
+
+    // User main server for Oracle related routes
     app.use('/database/', router);
 
-    httpServer.listen(webServerConfig.port)
+    httpServer.listen(port.server)
     .on('listening', () => {
-      console.log('Web server listening on localhost:', webServerConfig.port);
+      console.log('Web server listening on localhost:', port.server);
       resolve();
     })
     .on('error', err => {
