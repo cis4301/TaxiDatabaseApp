@@ -13,6 +13,6 @@ module.exports = {
   Mongoose: {
 
     database: process.env.MONGO_URI,
-    secret: 'secret'
+    secret: 'rosebud'
   }
 };

@@ -37,6 +37,12 @@ function initialize() {
     // Body Parser MiddleWare
     authapp.use(bodyParser.json());
 
+    // Passport MiddleWare
+    authapp.use(passport.initialize());
+    authapp.use(passport.session());
+
+    require('../config/passport.js')(passport);
+
     // Set user routes separate from query routes
     authapp.use('/users', users);
 
