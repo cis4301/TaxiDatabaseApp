@@ -1,0 +1,81 @@
+
+.registrationheader {
+  margin-bottom:10vh;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+flash-messages !important{
+  position: relative;
+}
+.loginform {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 10vh;
+  text-align:left !important;
+}
+
+.backgroundregistration {
+  background-image:url('../../../../assets/img/image1.jpg');
+  position: absolute;
+  top: 0%;
+  height:125vh;
+  width: 100%;
+  z-index: -20;
+  opacity: .7;
+}
+.centered {
+  position: absolute;
+  width: 75vw;
+  height: 80vw;
+  top:20%;
+  left:10%;
+  background: red;
+  z-index: -10;
+  background-color: #CFD0D1;
+}
+
+.spacer {
+  margin-top:6vh;
+}
+
+.border1register {
+  border-color: transparent !important;
+  background-color: #111111 !important;
+  color: white;
+  padding:20px;
+  margin-bottom: 10vh;
+}
+.ptextregister {
+  position: absolute;
+  top:25vh;
+  width:100%;
+  text-align:center;
+  color:#000;
+  font-size:27px;
+  font-weight: 600;
+  letter-spacing:8px;
+  text-transform:uppercase;
+  border-color: transparent;
+}
+
+
+.section-light{
+   background-color: #CFD0D1;
+   color: #4A4A4A !important;
+}
+
+.custom-glyph {
+  margin-left: 30px !important;
+  margin-right: 30px !important;
+}
+
+.input-group.input-group-unstyled input.form-control {
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+}
+.input-group-unstyled .input-group-addon:last-child {
+      border-radius: 4px;
+      border: 0px;
+      background-color: transparent;
+}

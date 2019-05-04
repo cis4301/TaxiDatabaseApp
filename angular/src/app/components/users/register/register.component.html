@@ -1,6 +1,6 @@
 <div class = "backgroundregistration"></div>
 <div class = "spacer">
-  <flash-messages></flash-messages>
+
   <div class = "ptextregister">
     <span class = "border1register">
       REGISTER:
@@ -21,9 +21,13 @@
       </div>
       <div class="form-group">
         <label>Password</label>
-        <input type="password" [(ngModel)]="password" name="password" class="form-control">
+        <div class="input-group input-group-unstyled">
+          <input type="password" [(ngModel)]="password" name="password" class="form-control" appAppPassword>
+        </div>
+
       </div>
       <input type="submit" class="btn-3" value="Submit">
     </form>
    </div>
   </div>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">

@@ -5,6 +5,7 @@ import { DataService } from '../../services/data.service';
 import { MessageService } from '../../services/message.service';
 import { Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-home',

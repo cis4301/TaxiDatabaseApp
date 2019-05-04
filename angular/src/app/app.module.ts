@@ -1,4 +1,4 @@
-// Angular / browser modules
+// Angular modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -9,16 +9,16 @@ import { Ng5SliderModule } from 'ng5-slider';
 import { ChartsModule } from 'ng2-charts';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 
-// Base App Components
+// App Components
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/users/login/login.component';
 import { RegisterComponent } from './components/users/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { TestComponent } from './components/charts/test/test.component';
+import { ProfileComponent } from './components/users/profile/profile.component';
 
-
-// Map related components
+// Map components
 import { CostComponent } from './components/maps/cost/cost.component';
 import { MainmapsComponent } from './components/maps/main/maps.component';
 import { MapsindexComponent } from './components/maps/mapsindex/mapsindex.component';
@@ -27,7 +27,7 @@ import { WeathermapComponent } from './components/maps/weathermap/weathermap.com
 import { WeathertypemapComponent } from './components/maps/weathertypemap/weathertypemap.component';
 import { WindmapComponent } from './components/maps/windmap/windmap.component';
 
-// Chart related components
+// Chart components
 import { ChartsindexComponent } from './components/charts/chartsindex/chartsindex.component';
 import { NetflowchartComponent } from './components/charts/netflowchart/netflowchart.component';
 import { TestchartComponent } from './components/charts/testchart/testchart.component';
@@ -35,14 +35,20 @@ import { WeatherchartComponent } from './components/charts/weatherchart/weatherc
 import { WeathercostComponent } from './components/charts/weathercost/weathercost.component';
 import { WeathertripavgComponent } from './components/charts/weathertripavg/weathertripavg.component';
 
-// App services
+// Services
 import { ValidateService } from './services/validate.service';
 import { DataService } from './services/data.service';
 import { MessageService } from './services/message.service';
+import { AuthService } from './services/auth.service';
+
+// Directives
+import { AppPasswordDirective } from './directives/app-password.directive';
+
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'profile', component: ProfileComponent},
   {path: '', component: HomeComponent},
   {path: 'test', component: TestComponent},
   {path: 'maps', component: MapsindexComponent},
@@ -80,7 +86,9 @@ const appRoutes: Routes = [
     WeathertypemapComponent,
     WindmapComponent,
 	  WeathertripavgComponent,
-	  NetflowchartComponent
+	  NetflowchartComponent,
+	  AppPasswordDirective,
+	  ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -93,7 +101,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   schemas: [],
-  providers: [ValidateService, DataService, MessageService],
+  providers: [ValidateService, DataService, MessageService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

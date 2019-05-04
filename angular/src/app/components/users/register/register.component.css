@@ -49,6 +49,7 @@
   text-align:center;
   color:#000;
   font-size:27px;
+  font-weight: 600;
   letter-spacing:8px;
   text-transform:uppercase;
   border-color: transparent;
@@ -58,4 +59,20 @@
 .section-light{
    background-color: #CFD0D1;
    color: #4A4A4A !important;
+}
+
+.custom-glyph {
+  margin-left: 30px !important;
+  margin-right: 30px !important;
+}
+
+.input-group.input-group-unstyled input.form-control {
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+}
+.input-group-unstyled .input-group-addon:last-child {
+      border-radius: 4px;
+      border: 0px;
+      background-color: transparent;
 }
