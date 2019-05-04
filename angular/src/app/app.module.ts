@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng5SliderModule } from 'ng5-slider';
 import { ChartsModule } from 'ng2-charts';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 // Base App Components
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { LoginComponent } from './components/users/login/login.component';
 import { RegisterComponent } from './components/users/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { TestComponent } from './components/charts/test/test.component';
+
 
 // Map related components
 import { CostComponent } from './components/maps/cost/cost.component';
@@ -87,6 +89,7 @@ const appRoutes: Routes = [
     ChartsModule,
     NgbModule,
     Ng5SliderModule,
+    FlashMessagesModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
   schemas: [],

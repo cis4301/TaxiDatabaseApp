@@ -1,3 +1,29 @@
-<p>
-  register works!
-</p>
+<div class = "backgroundregistration"></div>
+<div class = "spacer">
+  <flash-messages></flash-messages>
+  <div class = "ptextregister">
+    <span class = "border1register">
+      REGISTER:
+    </span>
+
+    <form (submit)="onRegisterSubmit()" class = "registrationform">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" [(ngModel)]="name" name="name" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" [(ngModel)]="username" name="username" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" [(ngModel)]="email" name="email" class="form-control" >
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" [(ngModel)]="password" name="password" class="form-control">
+      </div>
+      <input type="submit" class="btn-3" value="Submit">
+    </form>
+   </div>
+  </div>
