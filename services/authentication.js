@@ -28,6 +28,8 @@ function initialize() {
     });
 
     const authapp = express();
+    // Set port
+    const port = process.env.PORT || 8080;
 
     // Set Static Folder
     authapp.use(express.static('./public'));
@@ -56,8 +58,8 @@ function initialize() {
       res.sendFile(path.join(__dirname, '../public/index.html'));
     });
 
-    authapp.listen(port.auth, () => {
-      console.log('Auth server listening on localhost: ' + port.auth);
+    authapp.listen(port, () => {
+      console.log('Auth server listening on localhost: ' + port);
     });
   });
 }
