@@ -37,7 +37,7 @@ body, html{
   width: 125%;
 }
 
-.pimg1, .pimg2, .pimg3{
+.pimg1, .pimg2, .pimg3, .pimg1-2{
   position: relative;
   background-position: center;
   background-size: cover;
@@ -57,30 +57,15 @@ body, html{
 }
 .pimg2{
   background-image:url('./assets/img/image7.jpg');
-  min-height:400px;
-  cursor: pointer;
+  min-height:300px;
 }
 
 .pimg3{
   background-image:url('./assets/img/image12.jpg');
-  min-height:400px;
-  cursor: pointer;
-}
-.pimg2:hover{
-  background-image:url('./assets/img/image7.jpg');
-  min-height:400px;
-  cursor: pointer;
-  color:yellow;
-  opacity: .85;
+  min-height:300px;
 }
 
-.pimg3:hover {
-  background-image:url('./assets/img/image12.jpg');
-  min-height:400px;
-  cursor: pointer;
-  color:yellow;
-  opacity: .85;
-}
+
 
 .pimg5 {
   background-image:url('./assets/img/image5.jpg');
@@ -228,7 +213,7 @@ body, html{
   opacity: ;
   background-position: top;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   /*
     fixed = Parallax
     scroll = normal
@@ -552,8 +537,8 @@ body, html{
   background-attachment: scroll;
 }
 .pimg1-2 {
-  background-image:url('./assets/img/image1.jpg');
-  min-height:100vh;
+  background-image:url('./assets/img/image5.jpg');
+  min-height:55vh;
   width: 100%;
   position: relative;
   opacity: 1;
@@ -611,7 +596,7 @@ body, html{
 .border {
   border-color: transparent !important;
   background-color: #111111 !important;
-  color: yellow;
+  color: white;
   padding:20px;
 }
 .border1 {

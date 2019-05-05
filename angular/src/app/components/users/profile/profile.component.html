@@ -1,9 +1,29 @@
+<div class = "backgroundregistration"></div>
 <div *ngIf = "user">
-  <div class = "profile header">
-  <h2 class = "page-header"> {{user.name}} </h2>
-  <ul class = "list-group">
-    <li class = "list-group-item"> Username: {{user.username}} </li>
-    <li class = "list-group-item"> Email: {{user.email}} </li>
-  </ul>
+    <div class = "ptextregister">
+      <span class = "border1profile">
+        {{user.name}}
+      </span>
+
+      <div class = "spacer">
+          <form class = "profileform">
+
+            <div class="form-group">
+              <span class = "border1subprofile">
+                Username:
+              </span>
+              <span class = "border1sub"> {{user.username}}</span>
+            </div>
+
+            <div class="form-group">
+              <span class = "border1subprofile">
+                Email:
+              </span>
+              <span class = "border1sub"> {{user.email}}</span>
+            </div>
+
+          </form>
+      </div>
+
+    </div>
   </div>
-</div>

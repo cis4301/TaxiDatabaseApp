@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const cors = require('cors');
+const http = require('http');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const mongoose = require('mongoose');
@@ -29,7 +30,7 @@ function initialize() {
     const authapp = express();
 
     // Set Static Folder
-    authapp.use(express.static(path.join(__dirname, '../angular')));
+    authapp.use(express.static('./public'));
 
     // CORS MiddleWare
     authapp.use(cors());
@@ -49,6 +50,10 @@ function initialize() {
     // Default Database Startup message after Get '/'
     authapp.get('/', async (req, res) => {
         res.send('Invalid Endpoint');
+    });
+
+    authapp.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname, '../public/index.html'));
     });
 
     authapp.listen(port.auth, () => {

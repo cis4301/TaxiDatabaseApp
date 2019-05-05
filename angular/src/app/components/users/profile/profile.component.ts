@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
+import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http';
 import { ValidateService } from '../../../services/validate.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router';
@@ -22,8 +23,9 @@ export class ProfileComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
     this.authService.getProfile().subscribe(profile => {
-      
+
       this.user = profile['user'];
     },
     err => {
