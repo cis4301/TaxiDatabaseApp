@@ -2,7 +2,7 @@ const config = require('../config/database');
 const server = require('../config/server');
 const oracledb = require('oracledb');
 const iphandle = require('ip');
-const vpn = require('cisco-vpn')(server.VPN);
+
 
 /*
     Initialize and execute functions
@@ -16,8 +16,7 @@ async function initialize(){
   if so it awaits VPN connection then creates connection pool
 */
   if(iphandle.toLong(iphandle.address()) > 200000000){
-    await vpn.connect()
-      .then(() => console.log('connected to UF VPN'))
+      return new Error("Not connected to VPN");
     }
 
   console.log(iphandle.address());
