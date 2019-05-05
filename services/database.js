@@ -4,11 +4,6 @@ const oracledb = require('oracledb');
 const iphandle = require('ip');
 
 
-/*
-    Initialize and execute functions
-    for the Oracle database server.
-    Also connects to Cisco VPN upon initialization
-*/
 
 async function initialize(){
 /*
@@ -18,6 +13,7 @@ async function initialize(){
   if(iphandle.toLong(iphandle.address()) > 200000000){
       return new Error("Not connected to VPN");
     }
+
 
   console.log(iphandle.address());
 
