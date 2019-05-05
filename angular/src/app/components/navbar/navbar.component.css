@@ -1,0 +1,9 @@
+.navbar .white-title {
+  color: white;
+  padding-right: 20px;
+}
+
+.navbar {
+  background-color: #4D5257 !important;
+  color: black !important;
+}

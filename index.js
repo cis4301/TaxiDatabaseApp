@@ -1,6 +1,7 @@
-const webServer = require('./services/web-server.js');
-const database = require('./services/database.js');
-const dbConfig = require('./config/database.js');
+const server = require('./services/server');
+const database = require('./services/database');
+const authentication = require('./services/authentication');
+const dbConfig = require('./config/database');
 
 async function startup() {
 
@@ -17,14 +18,29 @@ async function startup() {
 // Initialize the web server after VPN and database connected
   try {
     console.log('Initializing web server module');
-    await webServer.initialize();
+    await server.initialize();
   } catch (err) {
     console.error(err);
     process.exit(1);
   }
 }
 
+async function authenticate() {
+
+  console.log('Starting auth server');
+
+// Initialize the CISE database pool with credentials stored in ./bashrc
+  try {
+    await authentication.initialize();
+  } catch (err) {
+    console.error(err);
+    process.exit(1);
+  }
+
+}
+
 startup();
+authenticate();
 
 async function shutdown(e) {
   let err = e;
@@ -32,7 +48,7 @@ async function shutdown(e) {
   try {
     await vpn.disconnect()
         .then(() => console.log('Disconnected from UF VPN'))
-    await webServer.close();
+    await dataserver.close();
   } catch (e) {
     console.log('Encountered error', e);
     err = err || e;
