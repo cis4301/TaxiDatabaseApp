@@ -37,7 +37,7 @@ body, html{
   width: 125%;
 }
 
-.pimg1, .pimg2, .pimg3{
+.pimg1, .pimg2, .pimg3, .pimg1-2{
   position: relative;
   background-position: center;
   background-size: cover;
@@ -52,34 +52,20 @@ body, html{
   background-image:url('./assets/img/image1.jpg');
   min-height:100vh;
   width: 100%;
+  z-index: -10;
 
 }
 .pimg2{
   background-image:url('./assets/img/image7.jpg');
-  min-height:400px;
-  cursor: pointer;
+  min-height:300px;
 }
 
 .pimg3{
   background-image:url('./assets/img/image12.jpg');
-  min-height:400px;
-  cursor: pointer;
-}
-.pimg2:hover{
-  background-image:url('./assets/img/image7.jpg');
-  min-height:400px;
-  cursor: pointer;
-  color:yellow;
-  opacity: .85;
+  min-height:300px;
 }
 
-.pimg3:hover {
-  background-image:url('./assets/img/image12.jpg');
-  min-height:400px;
-  cursor: pointer;
-  color:yellow;
-  opacity: .85;
-}
+
 
 .pimg5 {
   background-image:url('./assets/img/image5.jpg');
@@ -227,7 +213,7 @@ body, html{
   opacity: ;
   background-position: top;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   /*
     fixed = Parallax
     scroll = normal
@@ -551,8 +537,8 @@ body, html{
   background-attachment: scroll;
 }
 .pimg1-2 {
-  background-image:url('./assets/img/image1.jpg');
-  min-height:100vh;
+  background-image:url('./assets/img/image5.jpg');
+  min-height:55vh;
   width: 100%;
   position: relative;
   opacity: 1;
@@ -597,17 +583,11 @@ body, html{
   border-color: transparent;
 }
 
-.ptexttest {
-
-    top:50%;
-    width:100%;
-    text-align:center;
-    color:#000;
-    font-size:27px;
-    letter-spacing:8px;
-    text-transform:uppercase;
-    border-color: transparent;
-
+.border1button {
+  border-color: transparent !important;
+  background-color: #111111 !important;
+  color: white;
+  padding:20px;
 }
 .justify-content-center {
     display: flex !important;
@@ -616,7 +596,7 @@ body, html{
 .border {
   border-color: transparent !important;
   background-color: #111111 !important;
-  color: yellow;
+  color: white;
   padding:20px;
 }
 .border1 {
@@ -662,6 +642,38 @@ body, html{
   padding-left: 30px;
   padding-right: 30px;
   opacity:.8;
+}
+.btn-3 {
+  border-color: transparent !important;
+  background-color: #111111 !important;
+  color: white;
+  padding:10px;
+  margin-top: 5vh;
+  padding-left: 30px;
+  padding-right: 30px;
+  top:50%;
+  width:100%;
+  text-align:center;
+  font-size:27px;
+  letter-spacing:8px;
+  text-transform:uppercase;
+  border-color: transparent;
+}
+.btn-3:hover {
+  border-color: transparent !important;
+  background-color: #111111 !important;
+  color: white;
+  padding:10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  opacity:.8;
+  top:50%;
+  width:100%;
+  text-align:center;
+  font-size:27px;
+  letter-spacing:8px;
+  text-transform:uppercase;
+  border-color: transparent;
 }
 .border2 {
   border-color: transparent !important;

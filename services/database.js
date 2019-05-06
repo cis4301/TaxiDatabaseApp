@@ -1,45 +1,59 @@
-const dbConfig = require('../config/database.js');
+const config = require('../config/database');
+const server = require('../config/server');
 const oracledb = require('oracledb');
 const iphandle = require('ip');
-const vpn = require('cisco-vpn')({
-  server: process.env.VPN_SERVER,
-  username: process.env.VPN_username,
-  password: process.env.VPN_PASSWORD
-})
+const vpn = require('cisco-vpn')(server.VPN);
 
-async function initialize()
-{
+/*
+    Initialize and execute functions
+    for the Oracle database server.
+    Also connects to Cisco VPN upon initialization
+*/
 
-  if(iphandle.toLong(iphandle.address()) > 200000000 )
-  {
+async function initialize(){
+/*
+  Checks to see if VPN connection is already established
+  if so it awaits VPN connection then creates connection pool
+*/
+  if(iphandle.toLong(iphandle.address()) > 200000000){
     await vpn.connect()
       .then(() => console.log('connected to UF VPN'))
-  }
+    }
+
   console.log(iphandle.address());
 
-  await oracledb.createPool(dbConfig.CISEPool);
+  await oracledb.createPool(config.CISEPool);
 
   console.log("Oracle DB Connection Success");
 }
+/*
+  Closes the Oracle connection pool
+ */
+async function close(){
 
-async function close()
-{
   await oracledb.getPool().close();
 }
 
 function simpleExecute(statement, binds = [], opts = {}) {
-  return new Promise(async (resolve, reject) => {
-    let conn;
 
+  return new Promise(async (resolve, reject) => {
+
+    let conn;
     opts.outFormat = oracledb.OBJECT;
     opts.autoCommit = true;
 
+/*
+  This tries to get a connection from our connection pool.
+  If a connection exists in the pool it executes the statement with specified binds
+*/
     try {
+
       conn = await oracledb.getConnection();
 
       const result = await conn.execute(statement, binds, opts);
 
       resolve(result);
+
     } catch (err) {
       reject(err);
     } finally {
