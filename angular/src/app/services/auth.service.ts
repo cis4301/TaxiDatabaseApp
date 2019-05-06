@@ -18,20 +18,20 @@ export class AuthService {
   registerUser(user) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:4000/users/register', user, {headers: headers});
+    return this.http.post('users/register', user, {headers: headers});
   }
 
   authenticateUser(user) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:4000/users/authenticate', user, {headers: headers});
+    return this.http.post('users/authenticate', user, {headers: headers});
   }
 
   getProfile() {
     this.loadToken();
     console.log(this.authToken);
 
-    return this.http.get('http://localhost:4000/users/profile', {
+    return this.http.get('users/profile', {
       headers: new HttpHeaders().set("Authorization", this.authToken),
   });
 }

@@ -6,7 +6,6 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('../config/database');
-const port = require('../config/server');
 const users = require('../routes/users');
 const database = require('./database');
 
@@ -28,6 +27,8 @@ function initialize() {
     });
 
     const authapp = express();
+    // Set Heroku port
+    const port = process.env.PORT || 8080;
 
     // Set Static Folder
     authapp.use(express.static('./public'));

@@ -46,8 +46,6 @@ async function shutdown(e) {
   let err = e;
   console.log('Shutting down');
   try {
-    await vpn.disconnect()
-        .then(() => console.log('Disconnected from UF VPN'))
     await dataserver.close();
   } catch (e) {
     console.log('Encountered error', e);
