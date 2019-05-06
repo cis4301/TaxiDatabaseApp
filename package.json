@@ -2,10 +2,10 @@
   "name": "basics",
   "version": "1.0.0",
   "description": "CIS 4301 practice app",
-  "main": "index.js",
+  "main": "services/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "grunt"
   },
   "author": "Jason Hackleman",
   "license": "ISC",
