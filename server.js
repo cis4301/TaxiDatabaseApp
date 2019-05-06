@@ -1,4 +1,4 @@
-const server = require('./services/server');
+const server = require('./services/index');
 const database = require('./services/database');
 const authentication = require('./services/authentication');
 const dbConfig = require('./config/database');
