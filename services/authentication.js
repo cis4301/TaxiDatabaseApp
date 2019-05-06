@@ -57,8 +57,8 @@ function initialize() {
       res.sendFile(path.join(__dirname, '../public/index.html'));
     });
 
-    authapp.listen(port.auth, () => {
-      console.log('Auth server listening on localhost: ' + port.auth);
+    authapp.listen(port, () => {
+      console.log('Auth server listening on localhost: ' + port);
     });
   });
 }
