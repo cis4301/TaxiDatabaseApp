@@ -12,7 +12,7 @@ module.exports = {
   },
   Mongoose: {
 
-    database: process.env.MONGO_URI,
+    database: 'mongodb+srv://Hackleman:HEEZBV82VxqHYVq6@honeycomb-6bs3p.mongodb.net/test?retryWrites=true',
     secret: 'rosebud'
   }
 };
