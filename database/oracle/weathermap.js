@@ -1,14 +1,14 @@
 const database = require('../../services/database.js');
 
 const basequery =
-'WITH QUERY1 AS(SELECT CAST(TRUNC(PICKUPTIME, \'hh24\') AS TIMESTAMP) AS timestamp, (extract(minute from (dropofftime - pickuptime))*60 + extract(second from (dropofftime - pickuptime))) AS DATEDIFF, TRIPID AS tripid, PICKUPZONE AS zone  FROM CHASTAIN.TRIP)';
+'WITH QUERY1 AS(SELECT CAST(TRUNC(PICKUPTIME, \'hh24\') AS TIMESTAMP) AS timestamp, (extract(minute from (dropofftime - pickuptime))*60 + extract(second from (dropofftime - pickuptime))) AS DATEDIFF, TRIPID AS tripid, PICKUPZONE AS zone  FROM TRIP)';
 
 async function find(context) {
   let query = basequery;
   const binds = {};
 
-  query += ', QUERY2 AS(SELECT QUERY1.TRIPID AS TRIPID, QUERY1.DATEDIFF AS DATEDIFF, QUERY1.ZONE AS ZONE, CHASTAIN.WEATHER.TIME AS wtimestamp, CEIL(Temperature/5)*5 AS temperature, Windspeed, Condition FROM CHASTAIN.WEATHER, QUERY1 WHERE CHASTAIN.WEATHER.TIME = QUERY1.timestamp)';
-  query += ', QUERY3 AS(SELECT QUERY2.TRIPID AS TRIPID, QUERY2.DATEDIFF AS DATEDIFF, QUERY2.ZONE AS ZONE, QUERY2.wtimestamp AS wtimestamp, QUERY2.TEMPERATURE AS temperature, QUERY2.Windspeed AS windspeed, QUERY2.Condition AS condition, CHASTAIN.YELLOWTRIP.DISTANCE AS distance, CHASTAIN.YELLOWTRIP.TOTALCOST AS totalcost FROM QUERY2, CHASTAIN.YELLOWTRIP WHERE QUERY2.TRIPID = CHASTAIN.YELLOWTRIP.TRIPID)';
+  query += ', QUERY2 AS(SELECT QUERY1.TRIPID AS TRIPID, QUERY1.DATEDIFF AS DATEDIFF, QUERY1.ZONE AS ZONE, WEATHER.TIME AS wtimestamp, CEIL(Temperature/5)*5 AS temperature, Windspeed, Condition FROM WEATHER, QUERY1 WHERE WEATHER.TIME = QUERY1.timestamp)';
+  query += ', QUERY3 AS(SELECT QUERY2.TRIPID AS TRIPID, QUERY2.DATEDIFF AS DATEDIFF, QUERY2.ZONE AS ZONE, QUERY2.wtimestamp AS wtimestamp, QUERY2.TEMPERATURE AS temperature, QUERY2.Windspeed AS windspeed, QUERY2.Condition AS condition, YELLOWTRIP.DISTANCE AS distance, YELLOWTRIP.TOTALCOST AS totalcost FROM QUERY2, YELLOWTRIP WHERE QUERY2.TRIPID = YELLOWTRIP.TRIPID)';
 
   if (context.temperature) {
     binds.temperature = context.temperature;

@@ -1,13 +1,13 @@
 const database = require('../../services/database.js');
 
 const basequery =
-'WITH QUERY1 AS(SELECT CAST(TRUNC(PICKUPTIME, \'hh24\') AS TIMESTAMP) AS timestamp, (extract(minute from (dropofftime - pickuptime))*60 + extract(second from (dropofftime - pickuptime))) AS DATEDIFF, TRIPID AS tripid  FROM CHASTAIN.TRIP),';
+'WITH QUERY1 AS(SELECT CAST(TRUNC(PICKUPTIME, \'hh24\') AS TIMESTAMP) AS timestamp, (extract(minute from (dropofftime - pickuptime))*60 + extract(second from (dropofftime - pickuptime))) AS DATEDIFF, TRIPID AS tripid  FROM TRIP),';
 
 async function find(context) {
   let query = basequery;
   const binds = {};
-  query += 'QUERY2 AS(SELECT QUERY1.TRIPID AS TRIPID, QUERY1.DATEDIFF AS DATEDIFF, CHASTAIN.WEATHER.TIME AS wtimestamp, Temperature, Windspeed, Condition FROM CHASTAIN.WEATHER, QUERY1 WHERE CHASTAIN.WEATHER.TIME = QUERY1.timestamp),'
-  query += 'QUERY3 AS(SELECT QUERY2.TRIPID AS TRIPID, QUERY2.DATEDIFF AS datediff, QUERY2.wtimestamp AS wtimestamp, CEIL(QUERY2.Temperature/5)*5 AS temperature, QUERY2.Windspeed AS windspeed, QUERY2.Condition AS condition, CHASTAIN.YELLOWTRIP.DISTANCE AS distance, CHASTAIN.YELLOWTRIP.TOTALCOST AS totalcost FROM QUERY2, CHASTAIN.YELLOWTRIP WHERE QUERY2.TRIPID = CHASTAIN.YELLOWTRIP.TRIPID)'
+  query += 'QUERY2 AS(SELECT QUERY1.TRIPID AS TRIPID, QUERY1.DATEDIFF AS DATEDIFF, WEATHER.TIME AS wtimestamp, Temperature, Windspeed, Condition FROM WEATHER, QUERY1 WHERE WEATHER.TIME = QUERY1.timestamp),'
+  query += 'QUERY3 AS(SELECT QUERY2.TRIPID AS TRIPID, QUERY2.DATEDIFF AS datediff, QUERY2.wtimestamp AS wtimestamp, CEIL(QUERY2.Temperature/5)*5 AS temperature, QUERY2.Windspeed AS windspeed, QUERY2.Condition AS condition, YELLOWTRIP.DISTANCE AS distance, YELLOWTRIP.TOTALCOST AS totalcost FROM QUERY2, YELLOWTRIP WHERE QUERY2.TRIPID = YELLOWTRIP.TRIPID)'
 
   if (context.type == 1) {
       query += 'SELECT AVG(datediff/distance) AS triptime, windspeed FROM QUERY3 GROUP BY windspeed ORDER BY WINDSPEED ASC';

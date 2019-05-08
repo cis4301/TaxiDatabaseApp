@@ -1,7 +1,7 @@
 const database = require('../../services/database.js');
 
 const baseQuery =
-'SELECT * from CHASTAIN.GEOZONE';
+'SELECT * from GEOZONE';
 
 
 async function find(context) {

@@ -4,6 +4,6 @@ module.exports = {
     username: process.env.VPN_username,
     password: process.env.VPN_PASSWORD
   },
-  server: 3000,
+  server: 8000,
   auth: 4000
 };

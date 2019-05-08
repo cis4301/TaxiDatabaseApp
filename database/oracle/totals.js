@@ -1,7 +1,7 @@
 const database = require('../../services/database.js');
 
 const basequery =
-'SELECT COUNT(*) AS TOTAL FROM CHASTAIN.TRIP';
+'SELECT COUNT(*) AS TOTAL FROM TRIP';
 async function find(context) {
 
   let query = basequery;
