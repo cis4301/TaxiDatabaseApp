@@ -6,7 +6,7 @@ const config = require('./database');
 module.exports = function(passport) {
   let opts = {};
   opts.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme('jwt');
-  opts.secretOrKey = config.Mongoose.secret;
+  opts.secretOrKey = 'rosebud';
   passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
     User.getUserById(jwt_payload._id, (err, user) => {
       if (err) {

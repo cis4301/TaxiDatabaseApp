@@ -39,13 +39,13 @@ router.post('/authenticate', (req, res, next) => {
     User.comparePassword(password, user.password, (err, isMatch) => {
       if(err) throw err;
       if(isMatch) {
-        const token = jwt.sign(user.toJSON(), config.Mongoose.secret, {
+        const token = jwt.sign(user.toJSON(), 'rosebud', {
           expiresIn: 604800 // 1 week
         });
 
         res.json({
           success: true,
-          token: 'JWT ' + token,
+          token: 'jwt ' + token,
           user: {
             id: user._id,
             name: user.name,
@@ -60,10 +60,13 @@ router.post('/authenticate', (req, res, next) => {
   });
 });
 
-router.get('/profile', passport.authenticate('jwt', {session: false}), (req, res, next) => {
+router.get('/profile', passport.authenticate('jwt', {session: null}), (req, res, next) => {
+  console.log("made a profile call");
+
   res.json({
     user: req.user
   });
+  console.log(req.user);
 });
 
 

@@ -8,7 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng5SliderModule } from 'ng5-slider';
 import { ChartsModule } from 'ng2-charts';
 import { FlashMessagesModule } from 'angular2-flash-messages';
-import { JwtModule } from '@auth0/angular-jwt';
+import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 // App Components
 import { AppComponent } from './app.component';
@@ -68,7 +68,7 @@ const appRoutes: Routes = [
 ]
 
 export function jwtTokenGetter() {
-    return localStorage.getItem('id_token');
+    return localStorage.getItem('access_token');
 }
 
 @NgModule({
@@ -105,7 +105,8 @@ export function jwtTokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: jwtTokenGetter
-        }
+      }
+
     }),
     FlashMessagesModule.forRoot(),
     RouterModule.forRoot(appRoutes)

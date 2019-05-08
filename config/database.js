@@ -2,10 +2,10 @@ module.exports = {
 
   CISEPool: {
 
-    user: process.env.CISE_USER,
-    password: process.env.CISE_PASSWORD,
-//    connectString: "localhost/orcl",
-    connectString: process.env.CISE_CONNECTIONSTRING,
+    user: 'jsh',
+    password: 'Gg7405070366',
+    connectString: "oracle.cise.ufl.edu:1521/orcl",
+//    connectString: process.env.CISE_CONNECTIONSTRING,
     poolMin: 10,
     poolMax: 10,
     poolIncrement: 0
