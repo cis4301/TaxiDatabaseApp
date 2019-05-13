@@ -34,10 +34,10 @@ module.exports.getUserByUsername = function(username, callback){
 }
 
 module.exports.addUser = function(newUser, callback) {
-  /*
-    function takes newUser, uses bcrypt to hash the password then saves user.
-    Note that newUser is defined in routes as a User model.
-  */
+/*
+  function takes newUser, uses bcrypt to hash the password then saves user.
+  Note that newUser is defined in routes as a User model.
+*/
   bcrypt.genSalt(10, (err, salt) => {
     bcrypt.hash(newUser.password, salt, (err, hash) => {
       if (err) throw err;

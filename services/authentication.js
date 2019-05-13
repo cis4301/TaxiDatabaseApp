@@ -7,8 +7,8 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('../config/database');
 const users = require('../routes/users');
-const database = require('./database');
 
+let server;
 
 function initialize() {
 
@@ -26,41 +26,58 @@ function initialize() {
       console.log('Database error: '+err);
     });
 
-    const authapp = express();
+    const app = express();
+
+    server = http.createServer(app);
     // Set Heroku port
-    const port = process.env.PORT || 8080;
+    const port = 4000;
 
     // Set Static Folder
-    authapp.use(express.static('./public'));
+    app.use(express.static('./public'));
 
     // CORS MiddleWare
-    authapp.use(cors());
+    app.use(cors());
 
     // Body Parser MiddleWare
-    authapp.use(bodyParser.json());
+    app.use(bodyParser.json());
 
     // Passport MiddleWare
-    authapp.use(passport.initialize());
-    authapp.use(passport.session());
+    app.use(passport.initialize());
+    app.use(passport.session());
 
     require('../config/passport.js')(passport);
 
     // Set user routes separate from query routes
-    authapp.use('/users', users);
+    app.use('/users', users);
 
     // Default Database Startup message after Get '/'
-    authapp.get('/', async (req, res) => {
+    app.get('/', async (req, res) => {
         res.send('Invalid Endpoint');
     });
 
-    authapp.get('*', (req, res) => {
+    app.get('*', (req, res) => {
       res.sendFile(path.join(__dirname, '../public/index.html'));
     });
 
-    authapp.listen(port, () => {
+    app.listen(port, () => {
       console.log('Auth server listening on localhost: ' + port);
     });
   });
 }
 
+function close() {
+
+  return new Promise((resolve, reject) => {
+    server.close((err) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+
+      resolve();
+    });
+  });
+}
+
+module.exports.close = close;
 module.exports.initialize = initialize;
